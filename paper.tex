@@ -1,0 +1,1139 @@
+\documentclass[5p]{elsarticle}
+
+\usepackage{url}
+%\usepackage[anythingbreaks]{breakurl}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+
+%% Custom packages
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage[tight]{subfigure}
+\usepackage{graphicx}
+\usepackage[skip=8px,font=footnotesize]{caption} % http://tex.stackexchange.com/questions/94016/how-to-reduce-space-between-image-and-its-caption
+\usepackage[skip=8px,font=footnotesize]{subcaption}
+
+% http://tex.stackexchange.com/questions/23313/how-can-i-reduce-padding-after-figure
+\setlength{\belowcaptionskip}{-8px}
+
+% http://tex.stackexchange.com/questions/161195/why-does-label-create-an-undesired-white-space-after-phantomsubcaption
+\makeatletter
+\renewcommand*\subcaption@label{%
+  \caption@withoptargs\subcaption@@label}
+\makeatother
+
+% http://tex.stackexchange.com/questions/87197/latex-error-option-clash-for-package-xcolor-for-table
+\usepackage[table]{xcolor}
+\usepackage{paralist}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{fit}
+%\usetikzlibrary{backgrounds}
+\usepackage{accents} % for ubar
+\usepackage{mdframed}
+%\usepackage{memoir}
+
+% http://tex.stackexchange.com/questions/26269/border-or-frame-around-figure
+%\usepackage{float}
+%\floatstyle{boxed}
+%\restylefloat{table}
+%restylefloat{figure}
+
+%\usepackage{algorithm}
+%\usepackage{packages/algo}
+\usepackage{mathtools} % floor
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{xspace} % context sensitive space after macros
+\usepackage{pifont} % http://tex.stackexchange.com/questions/42619/x-mark-to-match-checkmark
+% \def\bcheckmark{\mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}}} % http://tex.stackexchange.com/questions/16000/creating-boxed-check-mark
+\def\bcheckmark{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
+%\usepackage{tabu} % http://tex.stackexchange.com/questions/34225/different-font-sizes-for-different-rows-in-table
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{multirow} % http://texblog.org/2012/12/21/multi-column-and-multi-row-cells-in-latex-tables/
+%\usepackage{floatrow} % http://tex.stackexchange.com/questions/185850/latex-how-to-group-subfigures
+%\usepackage{afterpage} % http://tex.stackexchange.com/questions/88657/clearpage-without-pagebreak
+\usepackage{placeins} % http://robjhyndman.com/hyndsight/latex-floats/
+
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+\renewcommand{\textfraction}{0.0}
+\renewcommand{\floatpagefraction}{0.0}
+
+% http://tex.stackexchange.com/questions/199118/modifying-whitespace-before-and-after-list-separately-using-enumitem-package
+\setlist{nosep}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\hyphenation{data-sets data-set Un-der-seg-men-tation Er-ror Vari-a-tion}
+
+% http://tex.stackexchange.com/questions/53823/is-there-a-ditto-symbol
+\newcommand*{\dittostraight}{------------''------------}
+
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\eg{{e.g}\onedot} \def\Eg{{E.g}\onedot}
+\def\ie{{i.e}\onedot} \def\Ie{{I.e}\onedot}
+\def\cf{{c.f}\onedot} \def\Cf{{C.f}\onedot}
+\def\etc{{etc}\onedot} \def\vs{{vs}\onedot}
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\etal{{et al}\onedot}
+
+\def\C{\textbf{\color{red} Check}}
+\def\R{\textbf{\color{red} Reference}}
+\def\T{\textbf{\color{red} ToDo}}
+
+\def\NAlgorithms{28\xspace}
+\def\NImplementations{31\xspace}
+\def\NMetrics{14\xspace}
+
+\def\BSDS{BSDS500\xspace}
+\def\NYU{NYUV2\xspace}
+\def\Fash{Fash\xspace}
+\def\SBD{SBD\xspace}
+\def\SUNRGBD{SUNRGBD\xspace}
+
+\def\W{\textbf{W}\xspace}
+\def\EAMS{\textbf{EAMS}\xspace}
+\def\NC{\textbf{NC}\xspace}
+\def\FH{\textbf{FH}\xspace}
+\def\reFH{\textbf{reFH}\xspace}
+\def\RW{\textbf{RW}\xspace}
+\def\QS{\textbf{QS}\xspace}
+\def\TP{\textbf{TP}\xspace}
+\def\PF{\textbf{PF}\xspace}
+\def\CIS{\textbf{CIS}\xspace}
+\def\CS{\textbf{CS}\xspace}
+\def\SLIC{\textbf{SLIC}\xspace}
+\def\vlSLIC{\textbf{vlSLIC}\xspace}
+\def\CRS{\textbf{CRS}\xspace}
+\def\ERS{\textbf{ERS}\xspace}
+\def\PB{\textbf{PB}\xspace}
+\def\DASP{\textbf{DASP}\xspace}
+\def\SEEDS{\textbf{SEEDS}\xspace}
+\def\reSEEDS{\textbf{reSEEDS}\xspace}
+\hyphenation{reSEEDS} % http://tex.stackexchange.com/questions/67571/no-hyphen-for-a-word
+\def\VC{\textbf{VC}\xspace}
+\def\TPS{\textbf{TPS}\xspace}
+\def\CCS{\textbf{CCS}\xspace}
+\def\VCCS{\textbf{VCCS}\xspace}
+\def\CW{\textbf{CW}\xspace}
+\def\preSLIC{\textbf{preSLIC}\xspace}
+\hyphenation{preSLIC} % http://tex.stackexchange.com/questions/67571/no-hyphen-for-a-word
+\def\MSS{\textbf{MSS}\xspace}
+\def\WP{\textbf{WP}\xspace}
+\def\LRW{\textbf{LRW}\xspace}
+\def\ERGC{\textbf{ERGC}\xspace}
+\def\LSC{\textbf{LSC}\xspace}
+\def\ETPS{\textbf{ETPS}\xspace}
+\def\POISE{\textbf{POISE}\xspace}
+\def\SEAW{\textbf{SEAW}\xspace}
+
+\def\Wr{\textbf{W}\xspace}
+\def\EAMSr{\textbf{EAMS}\xspace}
+\def\NCr{\textbf{NC}\xspace}
+\def\FHr{\textbf{FH}\xspace}
+\def\reFHr{\textbf{reFH}\xspace}
+\def\RWr{\textbf{RW}\xspace}
+\def\QSr{\textbf{QS}\xspace}
+\def\TPr{\textbf{TP}\xspace}
+\def\PFr{\textbf{PF}\xspace}
+\def\CISr{\textbf{CIS}\xspace}
+\def\SLICr{\textbf{SLIC}\xspace}
+\def\vlSLICr{\textbf{vlSLIC}\xspace}
+\def\CRSr{\textbf{CRS}\xspace}
+\def\ERSr{\textbf{ERS}\xspace}
+\def\PBr{\textbf{PB}\xspace}
+\def\DASPr{\textbf{DASP}\xspace}
+\def\SEEDSr{\textbf{SEEDS}\xspace}
+\def\reSEEDSr{\textbf{reSEEDS}\xspace}
+\def\VCr{\textbf{VC}\xspace}
+\def\TPSr{\textbf{TPS}\xspace}
+\def\CCSr{\textbf{CCS}\xspace}
+\def\VCCSr{\textbf{VCCS}\xspace}
+\def\CWr{\textbf{CW}\xspace}
+\def\preSLICr{\textbf{preSLIC}\xspace}
+\def\MSSr{\textbf{MSS}\xspace}
+\def\WPr{\textbf{WP}\xspace}
+\def\LRWr{\textbf{LRW}\xspace}
+\def\ERGCr{\textbf{ERGC}\xspace}
+\def\LSCr{\textbf{LSC}\xspace}
+\def\ETPSr{\textbf{ETPS}\xspace}
+\def\POISEr{\textbf{POISE}\xspace}
+\def\SEAWr{\textbf{SEAW}\xspace}
+
+\def\UEV{\text{UV}\xspace}
+\def\MR{\text{MR}\xspace}
+\def\AvgRec{Average\allowbreak\xspace Miss Rate\xspace}
+\def\AvgUE{Average\allowbreak\xspace Undersegmentation\allowbreak\xspace Error\xspace}
+\def\AvgEV{Average\allowbreak\xspace Unexplained\allowbreak\xspace Variation\xspace}
+\def\uAvgRec{\underline{A}verage\allowbreak\xspace \underline{M}iss \underline{R}ate\xspace}
+\def\uAvgUE{\underline{A}verage\allowbreak\xspace \underline{U}ndersegmentation\allowbreak\xspace \underline{E}rror\xspace}
+\def\uAvgEV{\underline{A}verage\allowbreak\xspace \underline{U}nexplained\allowbreak\xspace \underline{V}ariation\xspace}
+\def\AUE{\text{AUE}\xspace}
+\def\ARec{\text{AMR}\xspace}
+\def\AEV{\text{AUV}\xspace}
+\def\K{\text{K}\xspace}
+\DeclareRobustCommand{\Kd}{%
+    \ifmmode
+        K_d
+    \else
+        $K_d$
+    \fi
+}
+\def\UE{\text{UE}\xspace}
+\def\OE{\text{OE}\xspace}
+\def\Rec{\text{Rec}\xspace}
+\def\Pre{\text{Pre}\xspace}
+\DeclareRobustCommand{\UENP}{%
+    \ifmmode
+        \text{UE}_{\text{NP}}
+    \else
+        $\text{UE}_{\text{NP}}$
+    \fi
+}
+\DeclareRobustCommand{\UEB}{%
+    \ifmmode
+        \text{UE}_{\text{Bergh}}
+    \else
+        $\text{UE}_{\text{Bergh}}$
+    \fi
+}
+\def\UEL{$\text{UE}_{\text{Levin}}$\xspace}
+\DeclareRobustCommand{\UEL}{%
+    \ifmmode
+        \text{UE}_{\text{Levin}}\xspace
+    \else
+        $\text{UE}_{\text{Levin}}$
+    \fi
+}
+\def\ASA{\text{ASA}\xspace}
+\def\SSERGB{$\text{SSE}_{\text{RGB}}$\xspace}
+\def\SSEXY{$\text{SSE}_{\text{XY}}$\xspace}
+\def\CO{\text{CO}\xspace}
+\def\EV{\text{EV}\xspace}
+\def\MDE{\text{MDE}\xspace}
+\def\ICV{\text{ICV}\xspace}
+\def\CD{\text{CD}\xspace}
+\def\Reg{\text{Reg}\xspace}
+%\def\Score{\text{Score}\xspace}
+%\DeclareRobustCommand{\ScoreCO}{%
+%    \ifmmode
+%        \text{Score}_{\text{CO}}
+%    \else
+%        $\text{Score}_{\text{CO}}$
+%    \fi
+%}
+
+% http://tex.stackexchange.com/questions/98388/how-to-make-table-with-rotated-table-headers-in-latex
+\newcommand*\rot{\rotatebox{90}}
+
+% https://www.overleaf.com/help/50-how-do-i-change-column-or-row-separation-in-latex-tables#.VU_STPntlBc
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.25}
+
+\def\fullfourone{0.24}
+\def\fullthreeone{0.325}
+\def\fullthreetwo{0.645}
+\def\fullthreethree{0.985}
+\def\halfthreeone{0.15}
+\def\halftwoone{0.225}
+\def\fulltwoone{0.425}
+
+% http://tex.stackexchange.com/questions/7953/how-to-expand-texs-main-memory-size-pgfplots-memory-overload
+% http://tex.stackexchange.com/questions/82699/how-to-enable-shell-escape-in-texworks
+%\usepgfplotslibrary{external}
+%\tikzexternalize
+
+% http://tex.stackexchange.com/questions/35712/modify-footer-used-by-elsarticle-cls
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+\begin{document}
+\begin{frontmatter}
+\title{Superpixels: An Evaluation of the State-of-the-Art}
+
+\journal{Journal of \LaTeX\ Templates}
+\author{David Stutz, Alexander Hermans, Bastian Leibe}
+\address{Visual Computing Institute, RWTH Aachen University, Germany}
+
+\begin{abstract}
+    Superpixels group perceptually similar pixels to create visually meaningful
+    entities while heavily reducing the number of primitives for subsequent
+    processing steps. As of these properties,
+    superpixel algorithms have received much attention since their naming in~2003 \cite{RenMalik:2003}.
+    By today, publicly available superpixel algorithms have
+    turned into standard tools in low-level vision. As such, and due to their quick
+    adoption in a wide range of applications, appropriate benchmarks are crucial
+    for algorithm selection and comparison. Until now, the rapidly growing number of
+    algorithms as well as varying experimental setups hindered the development
+    of a unifying benchmark. We present a comprehensive evaluation of 28 state-of-the-art
+    superpixel algorithms utilizing a benchmark focussing on fair comparison and
+    designed to provide new insights relevant for applications. To this end, we explicitly discuss
+    parameter optimization and the importance of strictly enforcing connectivity.
+    Furthermore, by extending well-known metrics,
+    we are able to summarize algorithm performance independent of the number of
+    generated superpixels, thereby overcoming a major limitation of available benchmarks.
+    Furthermore, we discuss runtime, robustness against noise, blur and affine transformations,
+    implementation details as well as aspects of visual quality.
+    Finally, we present an overall ranking of superpixel algorithms
+    which redefines the state-of-the-art and enables researchers to easily select
+    appropriate algorithms and the corresponding implementations which themselves
+    are made publicly available as part of our benchmark at \url{davidstutz.de/projects/superpixel-benchmark/}.
+\end{abstract}
+\begin{keyword}
+    superpixels; superpixel segmentation; image segmentation; perceptual grouping; benchmark; evaluation
+\end{keyword}
+\end{frontmatter}
+
+\input{plots/style}
+\input{plots/references}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Introduced by Ren and Malik in 2003 \cite{RenMalik:2003}, superpixels group pixels
+similar in color and other low-level properties. In this respect, superpixels address
+two problems inherent to the processing of digital images~\cite{RenMalik:2003}: firstly, pixels are merely a result of discretization;
+and secondly, the high number of pixels in large images prevents many algorithms from being
+computationally feasible. Ren and Malik introduce superpixels as more natural entities
+-- grouping pixels which perceptually belong together while heavily reducing the number of primitives for subsequent algorithms.
+
+Superpixels have been been used in a wide range of applications -- even before the term
+``superpixel'' was coined. As early as 1988, Mester and Franke \cite{MesterFranke:1988}
+present segmentation results similar to superpixels. Later, in 1997, early
+versions of the watershed algorithm were known to produce superpixel-like segments
+\cite{MarcoteguiMeyer:1997}. In the early 2000s, Hoiem \etal \cite{HoiemEfrosHebert:2005,HoiemSteinEfrosHebert:2007}
+used the segmentation algorithms of \cite{FelzenswalbHuttenlocher:2004} and \cite{Meyer:1992}
+to generate oversegmentations for 3D reconstruction and occlusion boundaries.
+Similarly, the normalized cuts algorithm was early adopted for oversegmentation \cite{RenMalik:2003}
+and semantic segmentation \cite{GouldRodgersCohenElidanKoller:2008}.
+In \cite{HoiemEfrosHebert:2005,HoiemSteinEfrosHebert:2007} and \cite{TigheLazebnik:2010},
+superpixels have been used to extract meaningful features for subsequent tasks
+-- extensive lists of used features are included. Since the introduction of the
+first superpixel algorithms around 2009, they have been applied to many important problems in computer vision:
+tracking \cite{ShuWangHuchuanLuFanYangMingHsuanYang:2011,FanYangHuchuanLuMingHsuanYang:2014},
+stereo and occlusion \cite{YuhangZhangHartleyMashfordBurn:2011,YamaguchiMcAllesterUrtasun:2014},
+3D-reconstruction \cite{BodisSzomoruRiemenschneiderVanGool:2015}, saliency \cite{PerazziKrahenbuhlPritchhornung:2012,HeLauLiuHuangYang:2015},
+object detection \cite{ShuDehghanShah:2013,YanYuZhuLeiLi:2015} 
+and object proposal detection \cite{ArbelaezPontTusetBarronMarquesMalik:2014,RantalankilaKannalaRahtu:2014},
+depth recovery \cite{VanDenBerghCartonVanGool:2013}
+and depth estimation \cite{LiuSalzmannHe:2014,LiuShenLin:2014}, semantic segmentation \cite{GouldRodgersCohenElidanKoller:2008,LermaKosecka:2014}, indoor scene understanding \cite{LinFidlerUrtasun:2013,GuptaArbelaezGirshickMalik:2015,GeigerWang:2015},
+optical flow \cite{LuYangMinDo:2013}, scene flow \cite{MenzeGeiger:2015}, 
+clothes parsing \cite{YamaguchiKiapourOrtizBerg:2012,DongChenXiahuangYan:2013} and as basis for convolutional neural networks 
+\cite{GaddeJampaniKiefelGehler:2015,HeLauLiuHuangYang:2015} to name just a few.
+Superpixels have also been adopted in domain specific applications such as
+medical image segmentation \cite{AndresKotheHelmstaedterDenkHamprecht:2008,LucchiSmithAchantaLepetitFua:2010,LucchiSmithAchantaKnottFua:2012}
+or medical image retrieval \cite{HaasDonnerBurnerHolzerLangs:2011}.
+Moreover, superpixels have been found useful for dataset annotation \cite{YamaguchiKiapourOrtizBerg:2012,LiuFengDomokosXuHuangHuYan:2014}.
+Finally, several superpixel algorithms (among others \cite{VanDenBerghRoigBoixManenVanGool:2013},
+\cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012} and \cite{GrundmannKwatraHanEssa:2010}) have
+been adapted to videos and image volumes -- a survey and comparison of some of these
+so-called supervoxel algorithms can be found in \cite{XuCorso:2012}.
+
+In view of this background, most authors do not make an explicit difference between superpixel algorithms and
+oversegmentation algorithms, \ie superpixel algorithms are usually compared with
+oversegmentation algorithms and the terms have been used interchangeably
+(\eg \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009,SchickFischerStiefelhagen:2012,NeubertProtzel:2012}).
+Veksler \etal \cite{VekslerBoykovMehrani:2010} distinguish superpixel algorithms
+from segmentation algorithms running in ``oversegmentation mode''. More recently,
+Neubert and Protzel \cite{NeubertProtzel:2013} distinguish superpixel algorithms
+from oversegmentation algorithms with respect to their behavior on video sequences.
+In general, it is very difficult to draw a clear line between superpixel algorithms
+and oversegmentation algorithms. Several oversegmentation algorithms were not intended
+to generate superpixels, nevertheless, some of them share many characteristics
+with superpixel algorithms. We use the convention that superpixel
+algorithms offer control over the number of generated superpixels while segmentation
+algorithms running in ``oversegmentation mode'' do not. This covers the observations
+made by Veksler \etal and Neubert and Protzel.
+
+In general, most authors (\eg \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009,LiuTuzelRamalingamChellappa:2011,AchantaShajiSmithLucchiFuaSuesstrunk:2012,SchickFischerStiefelhagen:2012})
+agree on the following requirements for superpixels:
+\begin{enumerate}[label=--,leftmargin=0.25cm,noitemsep]
+    \item Partition. Superpixels should define a partition of the image,
+        \ie superpixels should be disjoint and assign a label to every pixel.
+    \item Connectivity. Superpixels are expected to represent connected sets of pixels.
+    \item Boundary Adherence. Superpixels should preserve image boundaries.
+        Here, the appropriate definition of image boundaries may depend on the application.
+    \item Compactness, Regularity and Smoothness. In the absence of image boundaries,
+        superpixels should be compact, placed regularly and exhibit smooth boundaries.
+    \item Efficiency. Superpixels should be generated efficiently.
+    \item Controllable Number of Superpixels. The number of generated superpixels should be controllable.
+\end{enumerate}
+
+Some of these requirements may be formulated implicitly, \eg Liu \etal \cite{LiuTuzelRamalingamChellappa:2011}
+require that superpixels may not lower the achievable performance of subsequent processing steps.
+Achanta \etal \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012} even require superpixels to
+increase the performance of subsequent processing steps. Furthermore, the above requirements
+should be fulfilled with as few superpixels as possible \cite{LiuTuzelRamalingamChellappa:2011}.
+
+\textbf{Contributions.} We present an extensive evaluation of \NAlgorithms algorithms on
+5 datasets regarding visual quality, performance, runtime, implementation details and
+robustness to noise, blur and affine transformations.
+In particular, we demonstrate the applicability of superpixel algorithms to indoor,
+outdoor and person images. To ensure a fair comparison, parameters have been optimized
+on separate training sets; as the number of generated superpixels heavily influences
+parameter optimization, we additionally enforced connectivity. Furthermore, to evaluate
+superpixel algorithms independent of the number of superpixels, we propose to integrate
+over commonly used metrics such as Boundary Recall \cite{MartinFowlkesMalik:2004},
+Undersegmentation Error \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009, AchantaShajiSmithLucchiFuaSuesstrunk:2012, NeubertProtzel:2012}
+and Explained Variation \cite{MoorePrinceWarrellMohammedJones:2008}. Finally,
+we present a ranking of the superpixel algorithms considering multiple metrics and
+independent of the number of generated superpixels.
+
+\textbf{Outline.} In Section \ref{sec:related-work} we discuss important related
+work regarding the comparison of superpixel algorithms and subsequently, in Section \ref{sec:algorithms},
+we present the evaluated superpixel algorithms. In Section \ref{sec:datasets} we discuss
+relevant datasets and introduce the used metrics in Section \ref{sec:benchmark}.
+Then, Section \ref{sec:parameter-optimization} briefly discusses problems related
+to parameter optimization before we present experimental results in Section \ref{sec:experiments}.
+We conclude with a short summary in Section~\ref{sec:conclusion}.
+
+\section{Related Work}
+\label{sec:related-work}
+
+% TODO cite own?
+Our efforts towards a comprehensive comparison of available superpixel algorithms
+is motivated by the lack thereof within the literature.
+%In particular, only few publications are specificly devoted to the comparison of a significant number of superpixel algorithms
+%in a consistent framework.
+Notable publications in this regard are \cite{SchickFischerStiefelhagen:2012},
+\cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012}, \cite{NeubertProtzel:2012}, and \cite{NeubertProtzel:2013}.
+Schick \etal \cite{SchickFischerStiefelhagen:2012} introduce a metric for evaluating
+the compactness of superpixels, while Achanta \etal \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012}
+as well as Neubert and Protzel \cite{NeubertProtzel:2012} concentrate on using
+known metrics. Furthermore, Neubert and Protzel evaluate the robustness of superpixel
+algorithms with respect to affine transformations such as scaling, rotation, shear
+and translation. However, they do not consider ground truth for evaluating robustness.
+More recently, Neubert and Protzel \cite{NeubertProtzel:2013} used the Sintel dataset
+\cite{ButlerWulffStanleyBlack:2012} to evaluate superpixel algorithms based on optical
+flow in order to assess the stability of superpixel algorithms in video sequences.
+%Again, ground truth is not used for this assessment.
+
+Instead of relying on an application independent evaluation of superpixel algorithms, some authors
+compared the use of superpixel algorithms for specific computer vision tasks.
+Achanta \etal \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012} use
+the approaches of \cite{GouldRodgersCohenElidanKoller:2008} and \cite{GonfausBoschVanDeWeijerBagdanovSerratGonzalez:2010}
+to assess superpixel algorithms as pre-processing step for semantic segmentation.
+Similarly, Strassburg \etal \cite{StrassburgGrzeszickRothackerFink:2015} evaluate
+superpixel algorithms based on the semantic segmentation approach described in \cite{TigheLazebnik:2010}.
+Weikersdorfer \etal \cite{WeikersdorferGossowBeetz:2012} use superpixels as basis for the normalized cuts
+algorithm \cite{ShiMalik:2000} applied to classical segmentation and compare the
+results with the well-known segmentation algorithm by Arbel{\'a}ez \etal \cite{ArbelaezMaireFowlkesMalik:2011}.
+Koniusz and Mikolajczyk \cite{KoniuszMikolajczyk:2009}, in contrast, evaluate superpixel algorithms
+for interest point extraction.
+
+In addition to the above publications, authors of superpixel algorithms usually
+compare their proposed approaches to existing superpixel algorithms. Usually, the
+goal is to demonstrate superiority with regard to specific aspects. However, used
+parameter settings are usually not reported, or default parameters are used, and
+implementations of metrics differ. Therefore, these experiments are
+not comparable across publications.
+
+Complementing the discussion of superpixel algorithms in the literature so far, and
+similar to \cite{SchickFischerStiefelhagen:2012}, \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012}
+and \cite{NeubertProtzel:2012}, we concentrate on known metrics
+to give a general, application independent evaluation of superpixel algorithms. However, we
+consider minimum/maximum as well as standard deviation in addition to metric
+averages in order assess the stability of superpixel algorithms as also considered
+by Neubert and Protzel \cite{NeubertProtzel:2012,NeubertProtzel:2013}.
+Furthermore, we explicitly document parameter optimization
+and strictly enforce connectivity to ensure fair comparison. In contrast to \cite{NeubertProtzel:2012},
+our robustness experiments additionally consider noise and blur and make use of ground truth for evaluation.
+Finally, we render three well-known metrics independent of the number of generated
+superpixels allowing us to present a final ranking of superpixel algorithms.
+
+\section{Algorithms}
+\label{sec:algorithms}
+
+\newcommand{\algobox}[9]{%
+    \begin{framed}
+        \vskip -0.15cm
+        \hskip -0.7cm
+        \begin{minipage}[t]{0.25\textwidth}
+            \vspace{-0.2cm}
+            \def\temp{#9}\ifx\temp\empty
+                \includegraphics[scale=0.425]{#1}
+            \else
+                \includegraphics[scale=#9]{#1}
+            \fi
+        \end{minipage}
+        \hskip 0.15cm
+        \begin{minipage}[t]{0.75\textwidth}
+            {\scriptsize
+                {\tiny Name}\\[-4px]
+                #2\\[-2px]
+                {\tiny Reference (Google Scholar Citations)\hfill Color}\\[-4px]
+                #3\\[-2px]
+            }
+        \end{minipage}
+        \vskip -0.15cm
+        \hskip -0.7cm
+        \begin{minipage}[t]{1.025\textwidth}
+            {\tiny Implementation \hfill Superpixels Compactness Iterations}\\[-4px]
+            {\scriptsize #4 \hfill #5\hskip 1.3cm#7\hskip 1.2cm#6}\\[-2px]
+            \def\temp{#8}\ifx\temp\empty
+
+            \else
+                {\tiny Description}\\[-4px]
+                {\scriptsize #8}
+            \fi
+        \end{minipage}
+        \def\temp{#8}\ifx\temp\empty
+            \vskip -0.5cm
+        \else
+            \vskip -0.2cm
+        \fi
+    \end{framed}
+    \vspace{-0.65cm}
+}
+
+In our comparison, we aim to discuss popular algorithms with publicly available implementations
+alongside less-popular and more recent algorithms for which implementations were partly provided by the authors.
+To address the large number of superpixel algorithms,
+we find a rough categorization of the discussed algorithms helpful.
+Based on the categorization by Achanta \etal \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012}
+ -- who presented (to the best of our knowledge) the first and only
+categorization of superpixel algorithms -- we categorized algorithms according to their high-level approach.
+We found that this categorization provides an adequate abstraction of algorithm details, allowing
+to give the reader a rough understanding of the different approaches,
+while being specific enough to relate categories to experimental results, as done in Section \ref{sec:experiments}.
+For each algorithm, we present the used acronym, the reference and its number of citations\footnote{
+    Google Scholar citations as of October 13, 2016.
+}.
+In addition, we provide implementation details such as the programming language, the used color space,
+the number of parameters as well as whether the number of superpixels,
+the compactness and the number of iterations (if applicable) are controllable.
+
+% Citations
+
+\textbf{Watershed-based.} These algorithms are based on the waterhed algorithm (\W)
+and usually differ in how the image is pre-processed and how markers are set.
+The number of superpixels is determined by the number of markers, and some watershed-based
+superpixel algorithms offer control over the compactness, for example \WP or~\CW.
+
+\vspace{-0.25cm}
+% 234
+\algobox{pictures/bsds500/w/cropped/w_175083_contours}{\W\xspace-- \underline{W}atershed}{Meyer \cite{Meyer:1992}, 1992 (234)\hfill\ref{plot:w}}{C/C++; RGB; 1 Parameter}{\checkmark}{--}{--}{}{}
+% 11
+\algobox{pictures/bsds500/cw/cropped/cw_175083_contours}{\CW\xspace-- \underline{C}ompact \underline{W}atershed}{Neubert and Protzel \cite{NeubertProtzel:2014}, 2014 (11)\hfill\ref{plot:cw}}{C/C++; RGB; 2 Parameters}{\checkmark}{--}{\checkmark}{}{}
+% 4
+\algobox{pictures/bsds500/mss/cropped/mss_175083_contours}{\MSS\xspace-- \underline{M}orphological \underline{S}uperpixel \underline{S}egmentation}{Benesova and Kottman \cite{BenesovaKottman:2014}, 2014 (4)\hfill\ref{plot:mss}}{C/C++; RGB; 5 Parameters}{\checkmark}{--}{--}{}{}
+% 5 + 8
+\algobox{pictures/bsds500/wp/cropped/wp_175083_contours}{\WP\xspace-- \underline{W}ater \underline{P}ixels}{Machairas \etal \cite{MachairasDecenciereWalter:2014,MachairesFaesselCardenasPenaChabardesWalterDecenciere:2015}, 2014 (5 + 8)\hfill\ref{plot:wp}}{Python; RGB; 2 Parameters}{\checkmark}{--}{\checkmark}{}{}
+\vspace{0.5cm}
+
+\textbf{Density-based.} Popular density-based algorithms are Edge-Augmented Mean Shift (\EAMS) and Quick Shift (\QS).
+Both perform mode-seeking in a computed density image; each pixel is assigned to the corresponding
+mode it falls into. Density-based algorithms usually cannot offer control over the
+number of superpixels or their compactness and are, therefore, also categorized as oversegmentation algorithms.
+
+\vspace{-0.25cm}
+% 9631
+\algobox{pictures/bsds500/eams/cropped/eams_175083_contours}{\EAMS\xspace-- \underline{E}dge-\underline{A}ugmented \underline{M}ean \underline{S}hift}{Comaniciu and Meer \cite{ComaniciuMeer:2002}, 2002 (9631)\hfill\ref{plot:eams}}{MatLab/C; RGB; 2 Parameters}{--}{--}{--}{}{}
+% 376
+\algobox{pictures/bsds500/qs/cropped/qs_175083_contours}{\QS\xspace-- \underline{Q}uick \underline{S}hift}{Vedaldi and Soatto \cite{VedaldiSoatto:2008}, 2002 (376)\hfill\ref{plot:qs}}{MatLab/C; Lab; 3 Parameters}{--}{--}{--}{}{}
+\vspace{0.5cm}
+
+\textbf{Graph-based.} Graph-based algorithms treat the image as undirected graph
+and partition this graph based on edge-weights which are often computed as color differences or similarities.
+The algorithms differ in the partitioning algorithm, for example \FH, \ERS and \POISE
+exhibit a bottom-up merging of pixels into superpixels, while \NC and \CIS use cuts
+and \PB uses elimination \cite{CarrHartley:2009}.
+
+\vspace{-0.25cm}
+% 996
+\algobox{pictures/bsds500/nc/cropped/nc_175083_contours}{\NC\xspace-- \underline{N}ormalized \underline{C}uts}{Ren and Malik \cite{RenMalik:2003}, 2002 (996)\hfill\ref{plot:nc}}{MatLab/C; RGB; 3 Parameters}{\checkmark}{--}{--}{}{}
+% 4144
+\algobox{pictures/bsds500/fh/cropped/fh_175083_contours}{\FH\xspace-- \underline{F}elzenswalb and \underline{H}uttenlocher}{Felzenswalb \etal \cite{FelzenswalbHuttenlocher:2004}, 2004 (4144)\hfill\ref{plot:fh}}{C/C++; RGB; 3 Parameters}{--}{--}{--}{}{}
+% 189 + 1587
+\algobox{pictures/bsds500/rw/cropped/rw_175083_contours}{\RW\xspace-- \underline{R}andom \underline{W}alks}{Grady \etal \cite{GradyFunkaLea:2004,Grady:2006}, 2004 (189 + 1587)\hfill\ref{plot:rw}}{MatLab/C; RGB; 2 Parameters}{\checkmark}{--}{--}{}{}
+% 223
+\algobox{pictures/bsds500/cis/cropped/cis_175083_contours}{\CIS\xspace-- \underline{C}onstant \underline{I}ntensity \underline{S}uperpixels}{Veksler \etal \cite{VekslerBoykovMehrani:2010}, 2010 (223)\hfill\ref{plot:cis}}{C/C++; Gray; 4 Parameters}{\checkmark}{\checkmark}{--}{}{}
+% 216
+\algobox{pictures/bsds500/ers/cropped/ers_175083_contours}{\ERS -- \underline{E}ntropy \underline{R}ate \underline{S}uperpixels}{Liu \etal \etal \cite{LiuTuzelRamalingamChellappa:2011}, 2011 (216)\hfill\ref{plot:ers}}{C/C++; RGB; 3 Parameters}{\checkmark}{--}{--}{}{}
+% 36
+\algobox{pictures/bsds500/pb/cropped/pb_175083_contours}{\PB\xspace-- \underline{B}oolean Optimization Superpixels}{Zhang \etal \cite{ZhangHartleyMashfordBurn:2011}, 2011 (36)\hfill\ref{plot:pb}}{C/C++; RGB; 3 Parameters}{\checkmark}{--}{--}{}{}
+%\algobox{pictures/bsds500/lrw/cropped/lrw_175083_contours}{\LRW\xspace-- Lazy Randowm Walks}{Shen \etal \cite{ShenDuWangLi:2014}, 2014 (18)\hfill\ref{plot:lrw}}{MatLab/C; Lab; 5 Parameters}{\checkmark}{\checkmark}{--}{}{}
+% 3
+%\algobox{pictures/bsds500/poise/cropped/poise_175083_contours}{\POISE\xspace-- POISE}{Humayun \etal \cite{HumayunLiRehg:2015}, 2015 (3)\hfill\ref{plot:poise}}{MatLab/C; RGB; 5 Parameters}{\checkmark}{--}{--}{}{}
+\algobox{pictures/bsds500/poise/cropped/poise_175083_contours}{{\renewcommand{\baselinestretch}{0.8}\POISE\xspace-- \underline{P}roposals for \underline{O}bjects from \underline{I}mproved\\\hphantom{\POISE\xspace-- }\underline{S}eeds and \underline{E}nergies}}{Humayun \etal \cite{HumayunLiRehg:2015}, 2015 (3)\hfill\ref{plot:poise}}{MatLab/C; RGB; 5 Parameters}{\checkmark}{--}{--}{}{}
+\vspace{0.5cm}
+
+\textbf{Contour evolution.} These algorithms represent superpixels as evolving
+contours starting from inital seed pixels.
+%They offer control over the number of superpixels and their compactness.
+
+\vspace{-0.25cm}
+% 559
+\algobox{pictures/bsds500/tp/cropped/tp_175083_contours}{\TP\xspace-- \underline{T}urbo \underline{P}ixels}{Levinshtein \etal \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009}, 2009 (559)\hfill\ref{plot:tp}}{MatLab/C; RGB; 4 Parameters}{\checkmark}{--}{--}{}{}
+% 2 + 1
+\algobox{pictures/bsds500/ergc/cropped/ergc_175083_contours}{\ERGC\xspace-- \underline{E}ikonal \underline{R}egion \underline{G}rowing \underline{C}lustering}{Buyssens \etal \cite{BuyssensGardinRuan:2014,BuyssensToutainElmoatazLezoray:2014}, 2014 (2 + 1)\hfill\ref{plot:ergc}}{C/C++; Lab; 3 Parameters}{\checkmark}{--}{\checkmark}{}{}
+\vspace{0.5cm}
+
+\textbf{Path-based.} Path-based approaches partition an image into superpixels by
+connecting seed points through pixel paths following specific criteria. The number of superpixels
+is easily controllable, however, compactness usually is not.
+Often, these algorithms use edge information: \PF uses discrete
+image gradients and \TPS uses edge detection as proposed in~\cite{DollarZitnick:2013}.
+
+\vspace{-0.25cm}
+% 18
+\algobox{pictures/bsds500/pf/cropped/pf_175083_contours}{\PF\xspace-- \underline{P}ath \underline{F}inder}{Drucker \etal \cite{DruckerMacCormick:2009}, 2009 (18)\hfill\ref{plot:pf}}{Java; RGB; 2 Parameters}{\checkmark}{--}{--}{}{}
+% 8 + 1
+\algobox{pictures/bsds500/tps/cropped/tps_175083_contours}{\TPS\xspace-- \underline{T}opology \underline{P}reserving \underline{S}uperpixels}{Dai \etal \cite{DaiTangHuazhaFuXiaochunCao:2012,HuazhuFuXiaochunCaoDaiTangYahongHanDongXu:2014}, 2012 (8 + 1)\hfill\ref{plot:tps}}{MatLab/C; RGB; 4 Parameters}{\checkmark}{--}{--}{}{}
+\vspace{0.5cm}
+
+\textbf{Clustering-based.} These superpixel algorithms are inspired by clustering algorithms
+such as $k$-means initialized by seed pixels and using color information, spatial
+information and additional information such as depth (as for example done by \DASP).
+Intuitively, the number of generated superpixels and their compactness is controllable.
+Although these algorithms are iterative, post-processing is required in order to enforce connectivity.
+
+\vspace{-0.25cm}
+% 438 + 1843
+\algobox{pictures/bsds500/slic/cropped/slic_175083_contours}{\SLIC\xspace-- \underline{S}imple \underline{L}inear \underline{I}terative \underline{C}lustering}{Achanta \etal \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2010,AchantaShajiSmithLucchiFuaSuesstrunk:2012}, 2010 (438 + 1843)\hfill\ref{plot:slic}}{C/C++; Lab; 4 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{}
+% 22
+\algobox{pictures/nyuv2/dasp/cropped/dasp_00000285_contours}{\DASP\xspace-- \underline{D}epth-\underline{A}daptive \underline{S}uperpixels}{Weikersdorfer \etal \cite{WeikersdorferGossowBeetz:2012}, 2012 (22)\hfill\ref{plot:dasp}}{C/C++; RGB\textbf{D}; 5 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{0.37}
+% 36
+\algobox{pictures/bsds500/vc/cropped/vc_175083_contours}{\VC\xspace-- \underline{VC}ells}{Wang and Wang \cite{WangWang:2012}, 2012 (36)\hfill\ref{plot:vc}}{C/C++; Lab; 6 Parameters}{\checkmark}{--}{\checkmark}{}{}
+% 87
+\algobox{pictures/nyuv2/vccs/cropped/vccs_00000285_contours}{\VCCS\xspace-- \underline{V}oxel-\underline{C}loud \underline{C}onnectivity \underline{S}egmentation}{Papon \etal \cite{PaponAbramovSchoelerWoergoetter:2013}, 2013 (87)\hfill\ref{plot:vccs}}{C/C++; RGB\textbf{D}; 4 Parameters}{--}{--}{\checkmark}{}{0.37}
+% 11
+\algobox{pictures/bsds500/preslic/cropped/preslic_175083_contours}{\preSLIC\xspace-- \underline{Pre}emptive \underline{SLIC}}{Neubert and Protzel \cite{NeubertProtzel:2014}, 2014 (11)\hfill\ref{plot:preslic}}{C/C++; Lab; 4 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{}
+% 2
+\algobox{pictures/bsds500/lsc/cropped/lsc_175083_contours}{\LSC\xspace-- \underline{L}inear \underline{S}pectral \underline{C}lustering}{Li and Chen \cite{LiChen:2015}, 2015 (2)\hfill\ref{plot:lsc}}{C/C++; Lab; 4 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{}
+\vspace{0.5cm}
+
+We note that \VCCS directly operates within a point cloud and we, therefore, backproject the
+generated supervoxels onto the image plane. Thus, the number of generated superpixels
+is harder to control.
+
+\textbf{Energy optimization.} These algorithms iteratively optimize a formulated
+energy. The image is partitioned into a regular grid as initial superpixel segmentation,
+and pixels are exchanged between neighboring superpixels with regard to the energy.
+The number of superpixels is controllable, compactness can be controlled and the
+iterations can usually be aborted at any point.
+
+\vspace{-0.25cm}
+% 14 + 4
+\algobox{pictures/bsds500/crs/cropped/crs_175083_contours}{\CRS\xspace-- \underline{C}ontour \underline{R}elaxed \underline{S}uperpixels}{Conrad \etal \cite{MesterConradGuevara:2011,ConradMertzMester:2013}, 2011 (14 + 4)\hfill\ref{plot:crs}}{C/C++; YCrCb; 4 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{}
+% 98
+%\algobox{pictures/bsds500/seeds/cropped/seeds_175083_contours}{\SEEDS\xspace-- \underline{S}uperpixels \underline{E}xtracted via \underline{E}nergy-\underline{D}riven \underline{S}ampling}{Van den Bergh \etal \cite{VanDenBerghBoixRoigCapitaniVanGool:2012}, 2012 (98)\hfill\ref{plot:seeds}}{C/C++; Lab; 6 Parameters}{\checkmark}{\checkmark}{--\footnotemark[2]}{}{}
+\algobox{pictures/bsds500/seeds/cropped/seeds_175083_contours}{{\renewcommand{\baselinestretch}{0.8}\SEEDS\xspace-- \underline{S}uperpixels \underline{E}xtracted via \underline{E}nergy-\\\hphantom{\SEEDS\xspace-- }\underline{D}riven \underline{S}ampling}}{Van den Bergh \etal \cite{VanDenBerghBoixRoigCapitaniVanGool:2012}, 2012 (98)\hfill\ref{plot:seeds}}{C/C++; Lab; 6 Parameters}{\checkmark}{\checkmark}{--}{}{}
+\footnotetext[2]{We note that, as in \cite{VanDenBerghBoixRoigVanGool:2013}, \SEEDS actually provides a compactness parameter. But the compactness parameter is not implemented in the publicly available implementation.}
+% 6 + 4
+\algobox{pictures/bsds500/ccs/cropped/ccs_175083_contours}{\CCS\xspace-- \underline{C}onvexity \underline{C}onstrained \underline{S}uperpixels}{Tasli \etal \cite{TasliCiglaGeversAlatan:2013,TasliCiglaAlatan:2015}, 2013 (6 + 4)\hfill\ref{plot:ccs}}{C/C++; Lab; 3 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{}
+% 6
+%\algobox{pictures/bsds500/etps/cropped/etps_175083_contours}{\ETPS\xspace-- \underline{E}xtended \underline{T}opology \underline{P}reserving \underline{S}egmentation}{Yao \etal \cite{YaoBobenFidlerUrtasun:2015}, 2015 (6)\hfill\ref{plot:etps}}{C/C++; RGB; 5 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{}
+\algobox{pictures/bsds500/etps/cropped/etps_175083_contours}{{\renewcommand{\baselinestretch}{0.8}\ETPS\xspace-- \underline{E}xtended \underline{T}opology \underline{P}reserving\\\hphantom{\ETPS\xspace-- }\underline{S}egmentation}}{Yao \etal \cite{YaoBobenFidlerUrtasun:2015}, 2015 (6)\hfill\ref{plot:etps}}{C/C++; RGB; 5 Parameters}{\checkmark}{\checkmark}{\checkmark}{}{}
+\vspace{0.65cm}
+
+\textbf{Wavelet-based.} We found that Superpixels from Edge-Avoiding Wavelets (\SEAW) \cite{StrassburgGrzeszickRothackerFink:2015} is not yet captured in the discussed categories. In particular, it is not comparable to the algorithms discussed so far.
+% \algobox{pictures/bsds500/seaw/cropped/seaw_175083_contours}{{\renewcommand{\baselinestretch}{0.8}\SEAW\xspace-- \underline{S}uperpixels from \underline{E}dge-\underline{A}voiding\\\hphantom{\SEAW\xspace-- }\underline{W}avelets}}{Strassburg \etal \cite{StrassburgGrzeszickRothackerFink:2015}, 2015 (0)\hfill\ref{plot:seaw}}{MatLab/C; RGB; 3 Parameters}{\checkmark}{--}{--}{}{}
+% 0
+\algobox{pictures/bsds500/seaw/cropped/seaw_175083_contours}{\SEAW\xspace-- \underline{S}uperpixels from \underline{E}dge-\underline{A}voiding \underline{W}avelets}{Strassburg \etal \cite{StrassburgGrzeszickRothackerFink:2015}, 2015 (0)\hfill\ref{plot:seaw}}{MatLab/C; RGB; 3 Parameters}{\checkmark}{--}{--}{}{}
+
+\subsection{Further Algorithms}
+
+While the above algorithms represent a large part of the proposed superpixel algorithms, 
+some algorithms are not included due to missing, unnoticed or only recently published implementations\footnote{
+	Visit \url{davidstutz.de/projects/superpixel-benchmark/} to integrate your algorithm into the comparison.
+}. These include \cite{RohkohlEngel:2007,
+EngelSpinelloTriebelSiegwartBulthoffCurio:2009, DucournauRitalBrettoLaget:2010, ZengWangWangGanZha:2011,
+PerbetStengerMaki:2012, DuShenYuWang:2012, YangGanGuiLiHou:2013, ZhangKanSchwingUrtasun:2013,
+RenShakhnarovich:2013, KimZhangKangKo:2013, ShenDuWangLi:2014, MorerioMarcenaroRegazzoni:2014,
+SivaWong:2014, MalladiRamRodriguez:2014, ShenDuWangLi:2014, FreifeldLiFisher:2015, Lv:2015}.
+
+\section{Datasets}
+\label{sec:datasets}
+
+% Examples:
+% - NYU [19] Deep convolutional neural fields for depth estimation from a single image
+% - indoor [20] Joint 3D Object and Layout Inference from a single RGB-D Image
+
+We chose five different datasets to evaluate superpixel algorithms: two indoor datasets,
+two outdoor datasets and one person dataset. We found that these datasets
+realisticly reflect the setting of common applications (\cite{YamaguchiKiapourOrtizBerg:2012,LinFidlerUrtasun:2013,
+LermaKosecka:2014,LiuSalzmannHe:2014,ArbelaezPontTusetBarronMarquesMalik:2014,GeigerWang:2015,
+HeLauLiuHuangYang:2015,GuptaArbelaezGirshickMalik:2015} to mention just a few 
+applications on the used datasets), while leveraging the
+availability of large, pixel-level annotated datasets. 
+However, we also note that by focusing on natural images some application domains might not be represented well
+ -- these include for example specialized research areas such as medical imaging where superpixels are also commonly used
+\cite{AndresKotheHelmstaedterDenkHamprecht:2008,LucchiSmithAchantaLepetitFua:2010,HaasDonnerBurnerHolzerLangs:2011,LucchiSmithAchantaKnottFua:2012}.
+Still, we believe that the experiments conducted on the
+chosen datasets will aid algorithm selection in these cases, as well. Furthermore, we expect the experiments
+to be useful for similar but larger datasets (such as PASCAL VOC \cite{EveringhamVanGoolWilliamsWinnZisserman:2007}, 
+ImageNet \cite{DengDongSocherLiLiFeiFei:2009} or
+MS COCO \cite{LinMairebelongieBourdevGirshickHaysPeronaRamananDollarZitnick:2014} to name a few prominent ones).
+In addition, the selected datasets enable
+us to draw a more complete picture of algorithm performance going beyond the
+datasets commonly used within the literature.
+Furthermore, both indoor datasets provide depth information, allowing us to evaluate superpixel algorithms
+requiring depth information as additional cue. In the following we briefly discuss the
+main aspects of these datasets; Figure \ref{fig:datasets} shows example
+images and Table~\ref{table:datasets} summarizes key statistics.
+
+{\BSDS \cite{ArbelaezMaireFowlkesMalik:2011}.} The Berkeley Segmentation
+Dataset $500$ (\BSDS) was the first to be used for superpixel algorithm evaluation
+(\eg \cite{RenMalik:2003,LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009}).
+It contains $500$ images and provides at least $5$ high-quality ground truth segmentations
+per image. Therefore, we evaluate algorithms on all ground truth segmentations and,
+for each image and a given metric, choose the ground truth segmentation resulting 
+in the worst score for averaging. The images
+represent simple outdoor scenes, showing landscape, buildings, animals and humans,
+where foreground and background are usually easily identified. Nevertheless, natural
+scenes where segment boundaries are not clearly identifiable contribute to the difficulty of the dataset.
+
+{\SBD \cite{GouldFultonKoller:2009}.} The Stanford Background Dataset (\SBD)
+combines $715$ images from several datasets \cite{RussellTorralbaMurphyFreeman:2008, Criminisi:2004, EveringhamVanGoolWilliamsWinnZisserman:2007, HoiemEfrosHebert:2007}.
+As result, the dataset contains images of varying size, quality and scenes.
+The images show outdoor scenes such as landscape, animals or street scenes.
+In contrast to the \BSDS dataset the scenes tend to be more complex, often containing
+multiple foreground objects or scenes without clearly identifiable foreground.
+The semantic ground truth has been pre-processed to ensure connected segments.
+
+{\NYU \cite{SilbermanHoiemKohliFergus:2012}.} The NYU Depth Dataset V2 (\NYU)
+contains $1449$ images including pre-processed depth. Silberman \etal provide instance
+labels which are used to ensure connected segments. Furthermore, following
+Ren and Bo \cite{RenBo:2012}, we pre-processed the ground truth to remove small
+unlabeled regions. The provided ground truth is of lower quality compared to
+the \BSDS dataset. The images show varying indoor scenes of private apartments and
+commercial accomodations which are often cluttered and badly lit.
+The images were taken using Microsoft's Kinect.
+
+\begin{figure}[t]
+	\centering
+	\begin{subfigure}[b]{0.29\textwidth}
+		\begin{subfigure}[t]{0.5\textwidth}%
+			\includegraphics[height=1.75cm]{pictures/bsds500/gt/contours/marked/35028-0}\phantomsubcaption\label{subfig:datasets-bsds500}%
+		\end{subfigure}
+		\begin{subfigure}[t]{0.425\textwidth}%
+			\includegraphics[height=1.75cm]{pictures/nyuv2/gt/contours/marked/00000561}\phantomsubcaption\label{subfig:datasets-nyuv2}%
+		\end{subfigure}
+		\\[4px]
+		\begin{subfigure}[t]{0.5\textwidth}%
+			\includegraphics[height=1.75cm]{pictures/sbd/gt/contours/marked/0004774}\phantomsubcaption\label{subfig:datasets-sbd}%
+		\end{subfigure}
+		\begin{subfigure}[t]{0.425\textwidth}%
+			\includegraphics[height=1.75cm]{pictures/sunrgbd/gt/contours/marked/00004732}\phantomsubcaption\label{subfig:datasets-sunrgbd}%
+		\end{subfigure}
+	\end{subfigure}
+	\hskip -3px
+	\begin{subfigure}[t]{0.12\textwidth}%
+		\includegraphics[height=3.68cm]{pictures/fash/gt/contours/marked/010}\phantomsubcaption\label{subfig:datasets-fash}%
+	\end{subfigure}
+	\caption{Example images from the used datasets. From left to right: \BSDS, \SBD, \NYU, \SUNRGBD,
+	and \Fash. Black contours represent ground truth and red
+	rectangles indicate excerpts used for qualitative comparison in Figures \ref{fig:experiments-qualitative-bsds500-sbd-fash} and \ref{fig:experiments-qualitative-nyuv2-sunrgbd}.
+	\textbf{Best viewed in color.}}
+	\label{fig:datasets}
+\end{figure}
+
+{\SUNRGBD \cite{SongLichtenbergXiao:2015}.} The Sun RGB-D dataset (\SUNRGBD)
+contains $10335$ images including pre-processed depth. The dataset combines images
+from the \NYU dataset and other datasets \cite{JanochKarayevJiaBarronFritzSaenkoDarrell:2011, XiaoOwensTorralba:2013}
+with newly acquired images. In contrast to the \NYU dataset, the \SUNRGBD dataset combines images
+from the following devices: Intel RealSense, Asus Xtion and Microsoft Kinect v1 and v2
+-- we refer to \cite{SongLichtenbergXiao:2015} for details. We removed the images
+taken from the \NYU dataset. The images show cluttered indoor scenes with bad lighting taken
+from private apartments as well as commercial accomodations. The provided semantic
+ground truth has been pre-processed similarly to the \NYU dataset.
+
+\begin{table}[t]
+    \centering
+    {\scriptsize
+        \begin{tabular}{r | r | c c c c c}
+            && \BSDS & \SBD & \NYU & \SUNRGBD & \Fash\\\hline
+            \multirow{2}{*}{\rot{Images}} & Train & 100 & 238 & 199 & 200 & 222\\
+            & Test & 200 & 477 & 399 & 400 & 463\\\hline
+            \multirow{2}{*}{\rot{Size}} & Train & $481 \times 321$ & $316 \times 240$ & $608 \times 448$ & $658 \times 486$ & $400 \times 600$\\
+            & Test & $481 \times 321$ & $314 \times 242$ & $608 \times 448$ & $660 \times 488$ & $400 \times 600$\\\hline
+    %        Ground Truth & Semantic & -- & \checkmark$^3$ & \checkmark & \checkmark & \checkmark\\
+    %        & Connected Components & -- & \checkmark & -- & \checkmark & \checkmark\\
+    %        & Thinning & -- & -- & \checkmark & \checkmark & --\\
+    %        & Per Image & $\geq5$ & $1$ & $1$ & $1$ & $1$\\\hline
+        \end{tabular}
+    }
+    \caption{Basic statistics of the used datasets: the total number of images,
+	the number of training and test images and the size of the images (averaged per dimension).
+	The number of images for the \SUNRGBD dataset excludes the images from the \NYU dataset.
+	For the \NYU and \SUNRGBD datasets, training and test images have been chosen
+	uniformly at random if necessary. Note that the odd numbers used for the \NYU dataset are for no
+	special reason.}
+    \label{table:datasets}
+\end{table}
+
+{\Fash \cite{YamaguchiKiapourOrtizBerg:2012}.} The Fashionista dataset (\Fash)
+contains $685$ images which have previously been used for clothes parsing. The
+images show the full body of fashion bloggers in front of various backgrounds.
+Yamaguchi et al. leveraged Amazon Mechanical Turk to acquire semantic ground truth based on
+pre-computed segments (\cite{YamaguchiKiapourOrtizBerg:2012} suggests that the
+algorithm in \cite{ArbelaezMaireFowlkesMalik:2011} has been used). The ground truth has been
+pre-processed to ensure connected segments.
+
+\section{Benchmark}
+\label{sec:benchmark}
+
+Our benchmark aims to score the requirements for superpixels discussed in
+Section \ref{sec:introduction}; in particular boundary adherence and compactness
+(note that connectivity is enforced during parameter optimization, see Section \ref{subsec:parameter-optimization-connectivity}).
+As these metrics inherently depend on the number of generated superpixels, we
+further extend these metrics to allow the assessment of superpixel algorithms independent
+of the number of generated superpixels. Therefore, let $S = \{S_j\}_{j = 1}^\K$ and 
+$G = \{G_i\}$ be partitions of the same image $I: x_n \mapsto I(x_n)$, $ 1\leq n \leq N$, where 
+$S$ represents a superpixel segmentation and $G$ a ground truth segmentation.
+
+Boundary \underline{Rec}all (\Rec) \cite{MartinFowlkesMalik:2004} is the most commonly used
+metric to asses boundary adherence given ground truth. Let $\text{FN}(G, S)$ and $\text{TP}(G,S)$
+be the number of false negative and true positive boundary pixels in $S$
+with respect to $G$. Then \Rec is defined as
+\vskip -6px
+\begin{align}
+    \Rec(G, S) = \frac{\text{TP}(G, S)}{\text{TP}(G, S) + \text{FN}(G, S)}.
+\end{align}
+\vskip -4px
+Overall, high \Rec represents better boundary adherence with respect to to the ground truth boundaries, \ie higher is better.
+In practice, a boundary pixel in $S$ is matched to an arbitrary boundary pixel
+in $G$ within a local neighborhood of size $(2r + 1) \times (2r + 1)$, with $r$ being $0.0025$ times the image diagonal
+rounded to the next integer (e.g. $r = 1$ for the \BSDS dataset).
+
+\underline{U}ndersegmentation \underline{E}rror (\UE) \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009, AchantaShajiSmithLucchiFuaSuesstrunk:2012, NeubertProtzel:2012} measures the ``leakage'' of superpixels with respect to $G$ and, therefore, implicitly also measures boundary adherence.
+Here, ``leakage'' refers to the overlap of superpixels with multiple, nearby ground truth segments. The original formulation by Levinshtein \etal \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009} can be written as
+\vskip -6px
+\begin{align}
+    \UEL(G, S) = \frac{1}{|G|} \sum_{G_i} \frac{\left(\sum_{S_j \cap G_i \neq \emptyset} |S_j|\right) - |G_i|}{|G_i|}\label{eq:benchmark-ue-levin}
+\end{align}
+\vskip -4px
+where the inner term represents the ``leakage'' of superpixel $S_j$ with respect to $G$. However, some authors \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012, NeubertProtzel:2012} argue that Equation \eqref{eq:benchmark-ue-levin} penalizes superpixels overlapping only slightly with neighboring ground truth segments and is not constrained to lie in $[0, 1]$. Achanta \etal \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012} suggest to threshold the ``leakage'' term of Equation \eqref{eq:benchmark-ue-levin} and only consider those superpixels $S_j$ with a minimum overlap of $\frac{5}{100}\cdot|S_j|$. Both van den Bergh et al. \cite{VanDenBerghBoixRoigVanGool:2013} and Neubert and Protzel \cite{NeubertProtzel:2012} propose formulations not suffering from the above drawbacks. In the former,
+\vskip -6px
+\begin{align}
+	\UEB(G, S) = \frac{1}{N} \sum_{S_j} |S_j - \arg \max_{G_i} |S_j \cap G_i||,
+\end{align}
+\vskip -4px
+each superpixel is assigned to the ground truth segment with the largest overlap, and only the ``leakage'' with respect to other
+ground truth segments is considered. Therefore, \UEB corresponds to $(1 - \ASA)$ -- with \ASA being Achievable Segmentation Accuracy as described below.
+The latter,
+\vskip -6px
+\begin{align}
+    \hspace{-0.25cm}\UENP(G, S) = \frac{1}{N} \sum_{G_i} \sum_{S_j \cap G_i \neq \emptyset} \hspace{-0.225cm} \min\{|S_j \cap G_i|, |S_j - G_i|\},
+\label{eq:benchmark-ue-np}
+\end{align}
+\vskip -4px
+is not directly equivalent to $(1 - \ASA)$, however, \UENP and \ASA are still strongly correlated as we will see later.
+All formulations have in common that lower \UE refers to less ``leakage'' with respect to the ground truth, \ie lower is better.
+In the following we use $\UE \equiv \UENP$.
+
+\underline{E}xplained \underline{V}ariation (\EV) \cite{MoorePrinceWarrellMohammedJones:2008} quantifies the
+quality of a superpixel segmentation without relying on ground truth.
+As image boundaries tend to exhibit strong change in color and structure, \EV
+assesses boundary adherence independent of human annotions. \EV is defined as
+\vskip -6px
+\begin{align}
+    \EV(S) = \frac{\sum_{S_j} |S_j| (\mu(S_j) - \mu(I))^2}{\sum_{x_n} (I(x_n) - \mu(I))^2}
+\end{align}
+\vskip -4px
+where $\mu(S_j)$ and $\mu(I)$ are the mean color of superpixel $S_j$ and the image $I$,
+respectively. As result, \EV quantifies the variation of the image explained by the superpixels,
+\ie higher is better.
+
+\underline{Co}mpactness (\CO) \cite{SchickFischerStiefelhagen:2012} has been introduced
+by Schick \etal \cite{SchickFischerStiefelhagen:2012} to evaluate the compactness of superpixels:
+\vskip -6px
+\begin{align}
+    \CO(G, S) = \frac{1}{N} \sum_{S_j} |S_j| \frac{4\pi A(S_j)}{P(S_j)}.\label{eq:co}
+\end{align}
+\vskip -4px
+\CO compares the area $A(S_j)$ of each superpixel $S_j$ with the
+area of a circle (the most compact 2-dimensional shape) with same perimeter $P(S_j)$,
+\ie higher is better.
+
+While we will focus on \Rec, \UE, \EV and \CO, further notable metrics are briefly discussed in the following.
+\underline{A}chievable \underline{S}egmentation \underline{A}ccuracy (\ASA) \cite{LiuTuzelRamalingamChellappa:2011}
+quantifies the achievable accuracy for segmentation using superpixels as pre-processing step:
+\vskip -6px
+\begin{align}
+    \ASA(G, S) = \frac{1}{N} \sum_{S_j} \max_{G_i}\{|S_j \cap G_i|\}\label{eq:benchmark-asa};
+\end{align}
+\vskip -4px
+\underline{I}ntra-\underline{C}luster \underline{V}ariation (\ICV) \cite{BenesovaKottman:2014} computes the average variation within each superpixel:
+\vskip -6px
+\begin{align}
+    \ICV(S) = \frac{1}{|S|} \sum_{S_j} \frac{\sqrt{\sum_{x_n \in S_j} (I(x_n) - \mu(S_j))^2}}{|S_j|};\label{eq:icv}
+\end{align}
+\vskip -4px
+\underline{M}ean \underline{D}istance to \underline{E}dge (\MDE) \cite{BenesovaKottman:2014} refines \Rec by also considering
+the distance to the nearest boundary pixel within the ground truth segmentation:
+\vskip -6px
+\begin{align}
+    \MDE(G, S) = \frac{1}{N} \sum_{x_n \in B(G)} \text{dist}_{S}(x_n)
+\end{align}
+\vskip -4px
+where $B(G)$ is the set of boundary pixels in $G$, and $\text{dist}_S$ is a distance transform of $S$.
+
+\subsection{Expressiveness and Chosen Metrics}
+\label{subsec:benchmark-correlation}
+
+Due to the large number of available metrics, we examined their expressiveness
+in order to systematically concentrate
+on few relevant metrics. We found that \UE tends to correlate
+strongly with \ASA which can be explained by Equations \eqref{eq:benchmark-ue-np}
+and \eqref{eq:benchmark-asa}, respectively. In particular, simple calculation shows that
+\ASA strongly resembles $(1 - \UE)$. Surprisingly, \UENP does not correlate
+with \UEL suggesting that either both metrics reflect different aspects of superpixels,
+or \UEL unfairly penalizes some superpixels as suggested in
+\cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012} and \cite{NeubertProtzel:2012}.
+Unsurprisingly, \MDE correlates strongly with \Rec which can also be explained by
+their respective definitions. In this sense, \MDE does not provide additional information.
+Finally, \ICV does not correlate with \EV which may be attributed to the missing
+normalization in Equation \eqref{eq:icv} when compared to \EV. This also results in
+\ICV not begin comparable across images as the intra-cluster variation is not related to the overall
+variation within the image. As of these considerations,
+we concentrate on \Rec, \UE and \EV for the presented experiments. 
+Details can be found in \ref{subsec:appendix-benchmark-expressiveness}.
+
+\subsection{\AvgRec, \AvgUE and \AvgEV}
+\label{subsec:benchmark-average}
+
+As the chosen metrics inherently depend on the number of superpixels,
+we seek a way of quantifying the performance with respect to \Rec, \UE and \EV 
+independent of~\K and in a single plot per dataset.
+In order to summarize performance over a given interval $[\K_{\min}, \K_{\max}]$,
+we consider $\MR = (1 - \Rec)$, \UE and $\UEV = (1 - \EV)$. Here, the first corresponds to the
+Boundary \underline{M}iss \underline{R}ate%\footnote{
+%	Boundary Recall (\Rec) essentially describes a hit rate (\ie the number of true positives 
+%	over the overall number of detected boundary pixels), therefore $(1 - \Rec)$ 
+%	corresponds to the Boundary Miss Rate (\MR) (\ie the number of false negatives over
+%	the overall number of boundary pixels).
+%}
+(\MR) and the last, \underline{U}nexplained \underline{V}ariation (\UEV), 
+quantifies the variation in the image not explained by the superpixels.
+We use the area below these curves in $[\K_{\min}, \K_{\max}] = [200, 5200]$ 
+to quantify performance independent of \K. In Section \ref{subsec:experiments-quantitative}, 
+we will see that these metrics appropriately summarize the performance of superpixel algorithms.
+We denote these metrics by \uAvgRec (\ARec), \uAvgUE (\AUE) and
+\uAvgEV (\AEV) -- note that this refers to an average over \K.
+By construction (and in contrast to \Rec and \EV), lower \ARec, \AUE and \AEV is better,
+making side-by-side comparison across datasets easy.
+
+\section{Parameter Optimization}
+\label{sec:parameter-optimization}
+
+For the sake of fair comparison, we optimized parameters on the training sets depicted in Table \ref{table:datasets}.
+Unfortunately, parameter optimization is not explicitly discussed in related work (\eg \cite{SchickFischerStiefelhagen:2012, AchantaShajiSmithLucchiFuaSuesstrunk:2012, NeubertProtzel:2012, SchickFischerStiefelhagen:2012})
+and used parameters are not reported in most publications. In addition, varying runtimes as well as
+categorical and integer parameters render parameter optimization difficult such that
+we had to rely on discrete grid search, jointly optimizing \Rec and \UE, \ie minimizing $(1 - \Rec) + \UE$.
+As \Rec and \UE operate on different representations (boundary pixels and superpixel segmentations, respectively),
+the additive formulation ensures that algorithms balance both metrics. For example, we observed 
+that using a multiplicative formulation allows superpixel algorithms to drive $(1 - \Rec)$ towards zero while disregarding \UE.
+We optimized parameters for $\K \in \{400, 1200, 3600\}$ and interpolated linearly in between (however,
+we found that for many algorithms, parameters are consistent across different values of $\K$).
+Optimized parameters also include compactness parameters and the number of iterations
+as well as the color space. We made sure that all algorithms at least support RGB color space for fairness.
+In the following, we briefly discuss the main difficulties encountered during parameter optimization, namely controlling the number
+of generated superpixels and ensuring connectivity.
+
+\subsection{Controlling the Number of Generated Superpixels}
+\label{subsec:parameter-optimization-superpixels}
+
+As discussed in Section \ref{sec:introduction}, superpixel algorithms are expected
+to offer control over the number of generated superpixels. We further expect the
+algorithms to meet the desired number of superpixels within acceptable bounds. For
+several algorithms, however, the number of generated superpixels is strongly dependent
+on other parameters. Figure \ref{fig:parameter-optimization-superpixels} demonstrates the
+influence of specific parameters on the number of generated superpixels
+(before ensuring connectivity as in Section \ref{subsec:parameter-optimization-connectivity})
+for \LSCr, \CISr, \VCr, \CRSr and \PBr. For some of the algorithms, such parameters needed to be constrained
+to an appropriate value range even after enforcing connectivity.
+
+For oversegmentation algorithms such as \FH, \EAMS and \QS not providing control
+over the number of generated superpixels, we attempted to exploit simple relationships
+between the provided parameters and the number of generated superpixels. For \EAMS
+and \QS this allows to control the number of generated superpixels at least roughly.
+\FH, in contrast, does not allow to control the number of generated superpixels
+as easily. Therefore, we evaluated \FH for a large set of parameter combinations
+and chose the parameters resulting in approximately the desired number of superpixels.
+
+\FloatBarrier
+\begin{figure}
+	\centering
+	\input{plots/parameter-optimization-k}
+	\caption{\K and \Rec on the training set of the \BSDS dataset when varying
+	parameters strongly influencing the number of generated superpixels
+	of: \LSCr; \CISr; \VCr; \CRSr; and \PBr.
+	The parameters have been omitted and scaled for clarity.
+	A higher number of superpixels results in increased \Rec. Therefore, unnoticed
+	superpixels inherently complicate fair comparison.
+	\textbf{Best viewed in color.}
+	}
+	\label{fig:parameter-optimization-superpixels}
+\end{figure}
+\begin{figure}
+	\centering
+    \input{plots/parameter-optimization-iterations}
+    \caption{\Rec and runtime in seconds $t$ on the training set of the \BSDS dataset
+	when varying the number of iterations of: \SLICr; \CRSr; \SEEDSr; \preSLICr; \LSCr; and \ETPSr.
+	Most algorithms achieve reasonable \Rec with about $3 - 10$ iterations. Still,
+	parameter optimization with respect to \Rec and \UE favors more iterations.
+	\textbf{Best viewed in color.}}
+    \label{fig:parameter-optimization-iterations}
+\end{figure}
+\begin{figure}
+	\centering
+    \input{plots/parameter-optimization-compactness}
+    \caption{\Rec and \CO on the training set of the \BSDS dataset when varying the compactness parameter of:
+	\SLICr; \CRSr; \VCr; \preSLICr; \CWr; \ERGCr; \LSCr; and \ETPSr.
+	The parameters have been omitted and scaled for clarity.
+	High \CO comes at the cost of reduced \Rec and parameter optimization
+	with respect to \Rec and \UE results in less compact superpixels.
+	\textbf{Best viewed in color.}}
+    \label{fig:parameter-optimization-compactness}
+	\vskip 12px
+	\input{legends/parameter-optimization-half}
+\end{figure}
+\FloatBarrier
+
+\subsection{Ensuring Connectivity}
+\label{subsec:parameter-optimization-connectivity}
+
+Unfortunately, many implementations (note the difference between implementation and algorithm)
+cannot ensure the connectivity of the generated superpixels as required in Section \ref{sec:introduction}.
+Therefore, we decided to strictly enforce connectivity using a connected components algorithm,
+\ie  after computing superpixels, each connected component is relabeled as separate superpixel. For some implementations,
+this results in many unintended superpixels comprising few pixels. In these cases
+we additionally merge the newly generated superpixels into larger neighboring ones.
+However, even with these post-processing steps, the evaluated implementations of \CIS, \CRS, \PB, \DASP, \VC, \VCCS or \LSC
+generate highly varying numbers of superpixels across different images.
+
+\subsection{Common Trade-Offs: Runtime and Compactness}
+\label{subsec:parameter-optimization-trade-offs}
+
+Two other types of parameters deserve detailed discussion: the number of iterations
+and the compactness parameter. The former controls the trade-off between runtime and performance,
+exemplarily demonstrated in Figure \ref{fig:parameter-optimization-iterations}
+showing that more iterations usually result in higher \Rec and higher runtime in
+seconds $t$. The latter controls the trade-off between compactness and performance and
+Figure \ref{fig:parameter-optimization-compactness} shows that higher \CO usually
+results in lower \Rec. Overall, parameter optimization with respect to \Rec and \UE
+results in higher runtime and lower compactness.
+
+\section{Experiments}
+\label{sec:experiments}
+
+Our experiments include visual quality, performance with respect to \Rec, \UE and
+\EV as well as runtime. In contrast to existing work \cite{SchickFischerStiefelhagen:2012, AchantaShajiSmithLucchiFuaSuesstrunk:2012, NeubertProtzel:2012, SchickFischerStiefelhagen:2012}, we consider
+minimum/maximum and standard deviation of \Rec, \UE and \EV (in relation to the number of generated superpixels \K) and present results
+for the introduced metrics \ARec, \AUE and \AEV.
+Furthermore, we present experiments regarding implementation details as well as robustness
+against noise, blur and affine transformations. Finally, we give an overall ranking based on \ARec and \AUE.
+
+\input{experiments/qualitative}
+\input{experiments/quantitative}
+\input{experiments/runtime}
+\input{experiments/implementations}
+\input{experiments/robustness}
+\input{experiments/k}
+\input{experiments/ranking}
+\input{experiments/ranking-table}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+In this paper, we presented a large-scale comparison of superpixel algorithms
+taking into account visual quality, ground truth dependent and independent metrics,
+runtime, implementation details as well as robustness to noise, blur and affine transformations.
+For fairness, we systematically optimized parameters while strictly
+enforcing connectivity. Based on the obtained parameters, we presented experiments
+based on five different datasets including indoor and outdoor scenes as well as persons.
+In contrast to existing work \cite{SchickFischerStiefelhagen:2012,AchantaShajiSmithLucchiFuaSuesstrunk:2012,NeubertProtzel:2012,NeubertProtzel:2013},
+we considered minimum/maximum as well as the standard deviation in addition to simple metric averages.
+We further proposed \AvgRec (\ARec), \AvgUE (\AUE) and \AvgEV (\AEV) to summarize algorithm performance
+independent of the number of generated superpixels.
+This enabled us to present an overall ranking of superpixel algorithms aimed to simplify and guide algorithm selection.
+
+Regarding the mentioned aspects of superpixel algorithms, we made several observations
+relevant for applications and future research. Considering visual quality, we found that
+the majority of algorithms provides good boundary adherence; some algorithms are
+able to capture even small details. However, better boundary adherence may influence compactness,
+regularity and smoothness. While regularity and smoothness strongly depends on the individual algorithms,
+a compactness parameter is beneficial to trade-off boundary adherence for compactness.
+Regarding performance, Boundary Recall (\Rec) \cite{MartinFowlkesMalik:2004},
+Undersegmentation Error (\UE) \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009, AchantaShajiSmithLucchiFuaSuesstrunk:2012, NeubertProtzel:2012}
+and Explained Variation (\EV) \cite{MoorePrinceWarrellMohammedJones:2008} provide a
+good overview but are not sufficient to discriminate algorithms reliably.
+Therefore, we used the minimum/maximum as well as the standard deviation of these metrics
+to identify stable algorithms, \ie algoritms providing monotonically increasing
+performance with regard to the number of generated superpixels. Furthermore, we were
+able to relate poor performance to a high standard deviation in the number of generated superpixels,
+justifying the need to strictly control connectivity. Concerning runtime, we identified
+several algorithms providing realtime capabilities, \ie roughly $30\text{fps}$, and showed
+that iterative algorithms allow to reduce runtime while only gradually reducing performance.
+Implementation details are rarely discussed in the literature; on three examples, we highlighted
+the advantage of ensuring connectivity and showed that revisiting implementations may benefit performance and runtime.
+We further demonstrated that generating a higher number of superpixels, \eg roughly $20000$,
+results in nearly no loss of information while reducing the high number of pixels to only $\sim 20000$ superpixels.
+Finally, we experimentally argued that superpixel algorithms are robust against noise and
+affine transformations before providing a final ranking of the algorithms based on the
+proposed metrics \AvgRec and \AvgUE.
+
+From the ranking in Table \ref{table:ranking}, we recommend 6 algorithms for use in practice,
+thereby covering a wide range of application scenarios: \ETPS \cite{YaoBobenFidlerUrtasun:2015},
+\SEEDS \cite{VanDenBerghBoixRoigCapitaniVanGool:2012}, \ERS \cite{LiuTuzelRamalingamChellappa:2011},
+\CRS \cite{MesterConradGuevara:2011,ConradMertzMester:2013}, \ERGC \cite{BuyssensGardinRuan:2014}
+and \SLIC \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2010}.
+These algorithms show superior performance regarding Boundary Recall, Undersegmentation
+Error and Explained Variation and can be considered stable.
+Furthermore, they are iterative (except for \ERGC and \ERS) and provide a compactness parameter (except for \SEEDS and \ERS).
+Except for \ERS and \CRS, they provide runtimes below $100\text{ms}$ -- depending on the implementation --
+and \preSLIC \cite{NeubertProtzel:2014}, which we see as a variant of \SLIC, provides realtime capabilities. Finally,
+the algorithms provide control over the number of generated superpixels
+(therefore, \EAMS, ranked $5$th in Table \ref{table:ranking}, is not recommended), are able to generate
+mostly connected superpixels and exhibit a very low standard deviation in the number of generated superpixels.
+
+%\textbf{Software.} The individual implementations, together with the used benchmark
+%and datasets will be made publicly available on the authors web page.
+
+\textbf{Software.} The individual implementations, together with the used benchmark,
+are made publicly available at \url{davidstutz.de/projects/superpixel-benchmark/}.
+
+\textbf{Acknowledgements.} The work in this paper was funded by the EU project STRANDS (ICT-2011-600623).
+We are also grateful for the implementations provided by many authors. 
+
+
+\section*{References}
+\bibliography{references/abbreviations,references/references}
+
+\FloatBarrier
+\clearpage
+\newpage
+\pagebreak
+\FloatBarrier
+
+\begin{appendix}
+	\input{appendix/algorithms}
+	\input{appendix/datasets}
+	\input{appendix/benchmark}
+	\input{appendix/parameter-optimization}
+	\input{appendix/experiments}
+\end{appendix}
+\end{document}

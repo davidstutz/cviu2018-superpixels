@@ -1,0 +1,33 @@
+\subsection{Influence of Implementations}
+\label{subsec:experiments-implementations}
+
+We discuss the influence of implementation details on performance and runtime for
+different implementations of \SEEDS, \SLIC and \FH. In particular, \reSEEDS and \reFH 
+are our revised implementations of \SEEDS and \FH, respectively. 
+Both implementations follow the algorithm as described in the corresponding publications,
+provide exactly the same parameters and are also implemented in C/C++.
+Still, we tried to optimize the implementations with respect to connectivity and
+kept them as efficient as possible. 
+\reFH additionally uses a slightly different graph data structure -- we refer to the
+implementations for details; these will be made publicly available together with the benchmark.
+Furthermore, we include \vlSLIC, an implementation of \SLIC as part of the VLFeat library
+\cite{VedaldiFulkerson:2008}, and \preSLIC \cite{NeubertProtzel:2014}, an accelerated version of \SLIC based on the
+original implementation. Both \vlSLIC and \preSLIC are also implemented in C/C++ as
+their original counterparts.
+
+We find that revisiting implementation details may be beneficial for both performance and runtime.
+We consider Figure \ref{fig:experiments-implementations-bsds500} showing \Rec, \UE
+and runtime in seconds $t$ for the introduced implementations of \SLIC, \SEEDS and \FH on the \BSDS dataset.
+For \reSEEDSr and \reFHr, we observe improved performance which can be related to
+the improved connectivity. However, even very similar implementations such as \SLICr
+and \vlSLICr differ slightly in performance; note the lower \Rec and higher \UE
+of \vlSLICr compared to \SLICr. Overall, the difference in runtime is most striking, for example \reSEEDSr
+and \preSLICr show significantly lower runtime compared to \SEEDSr and \SLICr.
+\reFHr, in contrast, shows higher runtime compared to \FHr due to a more complex data structure.
+%We conclude that revisiting implementation details may improve performance and reduce runtime.
+
+As expected, implementation details effect runtime, however, in the presented cases,
+\ie for \SLIC, \SEEDS and \FH, performance is also affected. Nevertheless, it
+still needs to be examined whether this holds true for the remaining algorithms, as well.
+Furthermore, the experiments suggest that improving connectivity helps
+performance.

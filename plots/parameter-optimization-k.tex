@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Superpixels
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{subfigure}[b]{\halftwoone\textwidth}
+    \begin{tikzpicture}
+        % CIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsSP,
+                xmin=1,xmax=10,
+                xtick=\empty,
+                ylabel=\K,
+                xlabel=parameter,
+                title=\BSDS,
+                title style={xshift=2cm}]
+
+            \addplot[CIS,transparent] coordinates{
+                (1,9887.95)
+                (3,2321)
+                (5,1022.8)
+                (7,652.94)
+                (10,468.2)
+            };
+        \end{axis}
+        \begin{axis}[
+                POsuperpixelsSP,
+                xmin=1,xmax=10,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CIS] coordinates{
+                (1,9887.95)
+                (3,2321)
+                (5,1022.8)
+                (7,652.94)
+                (10,468.2)
+            };
+            \label{plot:parameter-optimization-superpixels-cis}
+        \end{axis}
+
+        % CRS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsSP,
+                xmin=0.001,xmax=0.1,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none,]
+
+            \addplot[CRS] coordinates{
+                (0.001,10314.1)
+                (0.005,6844.61)
+                (0.01,4712.74)
+                (0.05,1060.46)
+                (0.1,609.12)
+            };
+            \label{plot:parameter-optimization-superpixels-crs}
+        \end{axis}
+
+        % PB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsSP,
+                xmin=1,xmax=20,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[PB] coordinates{
+                (1,5933.48)
+                (2.5,3532.01)
+                (5,2012.83)
+                (7.5,1382.84)
+                (10,1057.3)
+                (20,608.12)
+            };
+            \label{plot:parameter-optimization-superpixels-pb}
+        \end{axis}
+
+        % LSC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsSP,
+                xmin=0,xmax=0.5,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[LSC] coordinates{
+                (0,2616.8)
+                (0.01,2581.57)
+                (0.05,2218.48)
+                (0.1,1743.55)
+                (0.25,880.76)
+                (0.5,488.51)
+            };
+            \label{plot:parameter-optimization-superpixels-lsc}
+        \end{axis}
+
+        % VC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsSP,
+                xmin=10,xmax=250,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[VC] coordinates{
+                (10,13548.4)
+                (25,6936.92)
+                (50,3539.36)
+                (100,1651.79)
+                (250,662.58)
+            };
+            \label{plot:parameter-optimization-superpixels-vc}
+        \end{axis}
+    \end{tikzpicture}
+\end{subfigure}
+\begin{subfigure}[b]{\halftwoone\textwidth}
+    \begin{tikzpicture}
+        % CIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsRec,
+                xmin=1,xmax=10,
+                xtick=\empty,
+                ylabel=\Rec,
+                xlabel=parameter]
+
+            \addplot[CIS,transparent] coordinates{
+                (1,0.891961)
+                (3,0.807977)
+                (5,0.755691)
+                (7,0.726976)
+                (10,0.69987)
+            };
+        \end{axis}
+        \begin{axis}[
+                POsuperpixelsRec,
+                xmin=1,xmax=10,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CIS] coordinates{
+                (1,0.891961)
+                (3,0.807977)
+                (5,0.755691)
+                (7,0.726976)
+                (10,0.69987)
+            };
+            \label{plot:parameter-optimization-superpixels-cis}
+        \end{axis}
+
+        % CRS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsRec,
+                xmin=0.001,xmax=0.1,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none,]
+
+            \addplot[CRS] coordinates{
+                (0.001,0.965601)
+                (0.005,0.938007)
+                (0.01,0.900849)
+                (0.05,0.671317)
+                (0.1,0.564656)
+            };
+            \label{plot:parameter-optimization-superpixels-crs}
+        \end{axis}
+
+        % PB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsRec,
+                xmin=1,xmax=20,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[PB] coordinates{
+                (1,0.970505)
+                (2.5,0.917979)
+                (5,0.840081)
+                (7.5,0.783602)
+                (10,0.744347)
+                (20,0.677509)
+            };
+            \label{plot:parameter-optimization-superpixels-pb}
+        \end{axis}
+
+        % LSC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsRec,
+                xmin=0,xmax=0.5,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[LSC] coordinates{
+                (0,0.89937)
+                (0.01,0.898078)
+                (0.05,0.884433)
+                (0.1,0.853266)
+                (0.25,0.747625)
+                (0.5,0.61054)
+            };
+            \label{plot:parameter-optimization-superpixels-lsc}
+        \end{axis}
+
+        % VC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POsuperpixelsRec,
+                xmin=10,xmax=250,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[VC] coordinates{
+                (10,0.939249)
+                (25,0.893879)
+                (50,0.842431)
+                (100,0.784252)
+                (250,0.700503)
+            };
+            \label{plot:parameter-optimization-superpixels-vc}
+        \end{axis}
+    \end{tikzpicture}
+\end{subfigure}

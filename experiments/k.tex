@@ -1,0 +1,51 @@
+\subsection{More Superpixels}
+\label{subsec:experiments-k}
+
+\begin{table}[t]
+	\centering
+	{\scriptsize
+	\begin{tabular}{| r | l | l | l | l | l |}
+		\hline
+		& \Rec & \UE & \EV & \K & $t$\\\hline
+		\W & 0.9998 & 0.0377 & 0.9238 & 20078.2 & 0.0090\\
+		\PF & 0.9512 & 0.0763 & 0.8834 & 15171.5 & 0.0105\\
+		\CIS & 0.9959 & 0.0353 & 0.9792 & 15988.6 & 7.617\\
+		\SLIC & 0.9997 & 0.0339 & 0.9570 & 17029.7 & 0.1633\\
+		\CRS & 0.9999 & 0.0265 & 0.9587 & 24615.8 & 4.7014\\
+		\ERS & 0.9999 & 0.0297 & 0.9564 & 20000 & 0.5935\\
+		\PB & 0.9988 & 0.0398 & 0.9477 & 15058.9 & 0.0531\\
+		\SEEDS & 0.9997 & 0.0340 & 0.9729 & 18982.5 & 0.2267\\
+		\VC & 0.9482 & 0.04621 & 0.9631 & 10487.5 & 2.3174\\
+		\CCS & 0.9999 & 0.0223 & 0.9637 & 17676.9 & 0.227\\
+		\CW & 0.9999 & 0.0322 & 0.9362 & 26319.8 & 0.0049\\
+		\ERGC & 0.9999 & 0.0316 & 0.9744 & 21312 & 0.1217\\
+		\MSS & 0.9989 & 0.0372 & 0.9171 & 25890.5 & 0.0894\\
+		\preSLIC & 0.9999 & 0.0359 & 0.958 & 17088.3 & 0.021\\
+		\WP & 0.9980 & 0.0411 & 0.9463 & 15502.7 & 0.6510\\
+		\ETPS & 0.9999 & 0.0311 & 0.9793 & 17227 & 1.1657\\\hline
+	\end{tabular}
+	}
+	\caption{\Rec, \UE, \EV, \K and runtime in seconds $t$ for $\K \approx 20000$
+	on the \BSDS dataset including all algorithms able to generate $\K \gg 5000$ superpixels.
+	The experiments demonstrate that nearly all superpixel algorithms are able to
+	capture the image content without loss of information -- with $\Rec \approx 0.99$ and $\UE \approx 0.03$
+	-- while reducing the number of primitives from $481 \cdot 321 = 154401$ to $\K \approx 20000$.}
+	\label{table:experiments-k}
+\end{table}
+
+Up to now, we used \ARec, \AUE and \AEV to summarize experimental results for $\K \in [200,5200]$.
+However, for some applications, generating $\K \gg 5200$ superpixels may be interesting.
+
+For $\K \approx 20000$, superpixel algorithms can be used to dramatically reduce the
+number of primitives for subsequent processing steps with negligible loss of information.
+We consider Table \ref{table:experiments-k}
+presenting \Rec, \UE, \EV, runtime in seconds $t$ and \K for $\K \approx 20,000$ on
+the \BSDS dataset. We note that some algorithms were not able to generate $\K \gg 5200$
+superpixels and are, therefore, excluded. Similarly, we excluded algorithms not offering
+control over the number of generated superpixels. We observe that except for \VC and \PF all
+algorithms achive $\Rec \geq 0.99$, $\UE \approx 0.03$, and $\EV > 0.9$. Furthermore, the runtime of
+many algorithms is preserved. For example \W and \CW still run in below $10ms$ and the
+runtime for \preSLIC and \SLIC increases only slightly. Obviously, the number of
+generated superpixels varies more strongly for large~\K. Overall, most algorithms
+are able to capture the image content nearly perfectly while reducing
+ $321 \times 481 = 154401$ pixels to $\K \approx 20000$ superpixels.

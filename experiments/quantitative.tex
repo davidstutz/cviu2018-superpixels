@@ -1,0 +1,205 @@
+\subsection{Quantitative}
+\label{subsec:experiments-quantitative}
+
+\begin{figure*}
+	\centering
+	\vspace{-12px}
+	\input{plots/quantitative-bsds500-avg-min-max}\\[-4px]
+   	\input{plots/quantitative-bsds500-std}\\[-8px]
+   	\input{plots/quantitative-bsds500-k}\\[-4px]
+    \caption{Quantitative experiments on the \BSDS dataset; remember that \K denotes the number of generated superpixels.
+    \Rec (higher is better) and \UE (lower is better) give a concise overview of the performance with respect to ground
+    truth. In contrast, \EV (higher is better) gives a ground truth independent view on performance.
+    While top-performers as well as poorly performing algorithms are easily
+    identified, we provide more find-grained experimental results by considering
+    $\min\Rec$, $\max\UE$ and $\min\EV$. These statistics additionally can be used
+    to quantity the stability of superpixel algorithms. In particular, stable
+	algorithms are expected to exhibit monotonically improving $\min\Rec$, $\max\UE$ and $\min\EV$.
+	The corresponding $\text{std }\Rec$, $\text{std }\UE$ and $\text{std }\EV$ as
+	well as $\max\K$ and $\text{std }\K$ help to identify stable algorithms.
+	\textbf{Best viewed in color.}}
+    \label{fig:experiments-quantitative-bsds500}
+	\vskip 12px
+	\input{legends/full}
+\end{figure*}
+\begin{figure*}
+	\centering
+	\vspace{-12px}
+	\input{plots/quantitative-nyuv2-avg-min-max}\\[-4px]
+	\input{plots/quantitative-nyuv2-std}\\[-8px]
+	\input{plots/quantitative-nyuv2-k}\\[-4px]
+	\caption{Quantitative results on the \NYU dataset; remember that \K denotes the number of generated superpixels.
+    The presented experimental results complement the discussion in Figure \ref{fig:experiments-quantitative-bsds500}
+    and show that most observations can be confirmed across datasets. Furthermore,
+    \DASP and \VCCS show inferior performance suggesting that depth information does
+    not necessarily improve performance.
+	\textbf{Best viewed in color.}}
+	\label{fig:experiments-quantitative-nyuv2}
+	\vskip 12px
+	\input{legends/full+depth}
+\end{figure*}
+
+Performance is determined by \Rec, \UE and \EV. In contrast to most authors,
+we will look beyond metric averages. In particular, we consider the
+minimum/maximum as well as the standard deviation to get an impression of the behavior of superpixel algorithms.
+Furthermore, this allows us to quantify the stability of superpixel algorithms as
+also considered by Neubert and Protzel in~\cite{NeubertProtzel:2013}.
+
+\Rec and \UE offer a ground truth dependent overview to assess the performance of
+superpixel algorithms. We consider
+Figures \ref{subfig:experiments-quantitative-bsds500-rec.mean_min} and \ref{subfig:experiments-quantitative-bsds500-ue_np.mean_max},
+showing \Rec and \UE on the \BSDS dataset. With respect to \Rec, we can easily identify top performing
+algorithms, such as \ETPSr and \SEEDSr, as well as low performing algorithms,
+such as \FHr, \QSr and \PFr. However, the remaining algorithms lie closely together
+in between these two extremes, showing (apart from some exceptions) similar performance
+especially for large~\K. Still, some algorithms perform consistently better than others,
+as for example \ERGCr, \SLICr, \ERSr and \CRSr. For \UE, low performing algorithms,
+such as \PFr or \QSr, are still easily identified while the remaining algorithms
+tend to lie more closely together. Nevertheless, we can identify algorithms consistently
+demonstrating good performance, such as \ERGCr, \ETPSr, \CRSr, \SLICr and \ERSr.
+On the \NYU dataset, considering Figures \ref{subfig:experiments-quantitative-nyuv2-rec.mean[0]} and \ref{subfig:experiments-quantitative-nyuv2-ue_np.mean[0]},
+these observations can be confirmed except for minor differences as for example the
+excellent performance of \ERS regarding \UE or the better performance of \QS regarding \UE.
+Overall, \Rec and \UE provide a quick overview of superpixel algorithm performance
+but might not be sufficient to reliably discriminate superpixel algorithms.
+
+In contrast to \Rec and \UE, \EV offers a ground truth independent assessment of superpixel algorithms.
+Considering Figure \ref{subfig:experiments-quantitative-bsds500-ev.mean_min}, showing \EV on the \BSDS dataset,
+we observe that algorithms are dragged apart and even for large \K
+significantly different \EV values are attained. This suggests, that considering
+ground truth independent metrics may be beneficial for comparison. However, \EV
+cannot replace \Rec or \UE, as we can observe when comparing to
+Figures \ref{subfig:experiments-quantitative-bsds500-rec.mean_min} and \ref{subfig:experiments-quantitative-bsds500-ue_np.mean_max},
+showing \Rec and \UE on the \BSDS dataset; in particular
+\QSr, \FHr and \CISr are performing significantly better with respect to \EV than regarding \Rec and \UE.
+This suggests that \EV may be used to identify poorly performing algorithms, such as \TPSr, \PFr, \PBr or \NCr.
+On the other hand, \EV is not necessarily suited to identify well-performing algorithms
+due to the lack of underlying ground truth.
+Overall, \EV is suitable to complement the view provided by \Rec and \UE,
+however, should not be considered in isolation.
+
+The stability of superpixel algorithms can be quantified by $\min\Rec$, $\max\UE$ and $\min\EV$ considering the behavior for increasing \K.
+We consider Figures \ref{subfig:experiments-quantitative-bsds500-rec.min_min}, \ref{subfig:experiments-quantitative-bsds500-ue_np.max_max}
+and \ref{subfig:experiments-quantitative-bsds500-ev.min_min},
+showing $\min\Rec$, $\max\UE$ and $\min\EV$ on the \BSDS dataset. We define the stability of superpixel algorithms
+as follows: an algorithm is considered stable if performance monotonically increases with \K
+(\ie monotonically increasing \Rec and \EV and monotonically decreasing \UE).
+Furthermore, these experiments can be interpreted as empirical bounds on the performance.
+For example algorithms such as \ETPSr, \ERGCr, \ERSr, \CRSr and \SLICr can be considered stable and provide good bounds.
+In contrast, algorithms such as \EAMSr, \FHr, \VCr or \POISEr are punished by
+considering $\min\Rec$, $\max\UE$ and $\min\EV$ and cannot be described as stable.
+Especially oversegmentation algorithms show poor stability. Most strikingly,
+\EAMS seems to perform especially poorly on at least one image from the \BSDS dataset.
+Overall, we find that $\min\Rec$, $\max\UE$ and $\min\EV$ appropriately reflect
+the stability of superpixel algorithms.
+
+The minimum/maximum of \Rec, \UE and \EV captures lower/upper bounds on performance.
+In contrast, the corresponding standard deviation can be thought of as the expected
+deviation from the average performance.
+We consider Figures \ref{subfig:appendix-experiments-bsds500-rec.std[0]},
+\ref{subfig:appendix-experiments-bsds500-ue_np.std[0]} and \ref{subfig:appendix-experiments-bsds500-ev.std[0]}
+showing the standard deviation of \Rec, \UE and \EV on the \BSDS dataset.
+We can observe that in many cases good performing algorithms such as \ETPS, \CRS, \SLIC or \ERS
+also demonstrate low standard deviation. Oversegmentation algorithms, on the other hand, show higher standard deviation
+-- together with algorithms such as \PF, \TPS, \VC, \CIS and \SEAW.
+In this sense, stable algorithms can also be identified by low and monotonically decreasing standard deviation.
+
+The variation in the number of generated superpixels is an important aspect
+for many superpixel algorithms. In particular, high standard deviation in the number of generated superpixels can be related to
+poor performance regarding \Rec, \UE and \EV. We find that superpixel algorithms ensuring that
+the desired number of superpixels is met within appropriate bounds are preferrable. We consider
+Figures \ref{subfig:experiments-quantitative-bsds500-sp.max[0]} and \ref{subfig:experiments-quantitative-bsds500-sp.std[0]},
+showing $\max\K$ and $\text{std }\K$ for $\K \approx 400$ on the \BSDS dataset. Even after enforcing connectivity
+as described in Section \ref{subsec:parameter-optimization-connectivity}, we observe
+that several implementations are not always able to meet the desired number of superpixels
+within acceptable bounds. Among these algorithms are \QSr, \VCr, \FHr, \CISr and \LSCr.
+Except for the latter case, this can be related to poor performance with respect
+to \Rec, \UE and~\EV. Conversely, considering algorithms such as \ETPSr, \ERGCr or \ERSr
+which guarantee that the desired number of superpixels is met exactly, this can be
+related to good performance regarding these metrics. To draw similar conclusions
+for algorithms utilizing depth information, \ie \DASP and \VCCS,
+the reader is encouraged to consider
+Figures \ref{subfig:experiments-quantitative-nyuv2-sp.max[0]} and \ref{subfig:experiments-quantitative-nyuv2-sp.std[0]},
+showing $\max\K$ and $\text{std }\K$ for $\K\approx 400$ on the \NYU dataset.
+We can conclude that superpixel algorithms with low standard deviation in the number
+of generated superpixels are showing better performance in many cases.
+
+Finally, we discuss the proposed metrics \ARec, \AUE and \AEV (computed as the area
+below the $\MR = (1 - \Rec)$, \UE and $\UEV = (1 - \EV)$ curves within the interval $[\K_{\min}, \K_{\max}] = [200,5200]$, \ie lower is better).
+We find that these metrics appropriately reflect and summarize the performance of superpixel
+algorithms independent of \K. As can be seen in Figure \ref{subfig:experiments-quantitative-bsds500-average},
+showing \ref{plot:experiments-quantitative-bsds500-average-rec} \ARec, \ref{plot:experiments-quantitative-bsds500-average-ue_np}
+\AUE and \ref{plot:experiments-quantitative-bsds500-average-ev} \AEV on the \BSDS dataset, most of the
+previous observations can be confirmed. For example, we exemplarily consider \SEEDSr
+and observe low \ARec and \AEV which is confirmed by
+Figures \ref{subfig:experiments-quantitative-bsds500-rec.mean_min} and \ref{subfig:experiments-quantitative-bsds500-ev.mean_min},
+showing \Rec and \EV on the \BSDS dataset, where \SEEDSr consistently outperforms all algorithms except for \ETPSr.
+However, we can also observe higher \AUE compared to algorithms such as
+\ETPSr, \ERSr or \CRSr wich is also consistent with Figure \ref{subfig:experiments-quantitative-bsds500-ue_np.mean_max},
+showing \UE on the \BSDS dataset. We conclude, that \ARec, \AUE and \AEV give an easy-to-understand summary of algorithm performance.
+Furthermore, \ARec, \AUE and \AEV can be used to rank the different
+algorithms according to the corresponding metrics; we will follow up on this idea in Section \ref{subsec:experiments-ranking}.
+
+The observed \ARec, \AUE and \AEV also properly reflect the difficulty of the different datasets. We
+consider Figure \ref{fig:experiments-quantitative-avg} showing \ref{plot:experiments-quantitative-bsds500-average-rec} \ARec,
+\ref{plot:experiments-quantitative-bsds500-average-ue_np} \AUE and \ref{plot:experiments-quantitative-bsds500-average-ev}  \AEV for all five datasets.
+Concentrating on \SEEDS and \ETPS, we see that the relative
+performance (\ie the performance of \SEEDS compared to \ETPS) is consistent across
+datasets; \SEEDS usually showing higher \AUE while \ARec and \AEV are usually similar.
+Therefore, we observe that these metrics can be used to characterize
+the difficulty and ground truth of the datasets. For example, considering
+the \Fash dataset, we observe very high \AEV compared
+to the other datasets, while \ARec and \AUE are usually very low. This can be
+explained by the ground truth shown in Figure~\ref{subfig:datasets-fash},
+\ie the ground truth is limited to the foreground (in the case of Figure \ref{subfig:datasets-fash}, the woman),
+leaving even complicated background unannotated. Similar arguments can be developed
+for the consistently lower \ARec, \AUE and \AEV for the \NYU and \SUNRGBD datasets compared to the \BSDS dataset.
+For the \SBD dataset, lower \ARec, \AUE and \AEV can also be explained by the smaller average image size.
+
+In conclusion, \ARec, \AUE and \AEV accurately reflect the performance of superpixel
+algorithms and can be used to judge datasets. Across the different datasets, path-based
+and density-based algorithms perform poorly, while the remaining classes show mixed
+performance. However, some iterative energy optimization, clustering-based and
+graph-based algorithms such as \ETPS, \SEEDS, \CRS, \ERS and \SLIC show favorable performance.
+
+\begin{figure*}
+	\centering
+	\input{plots/quantitative-bsds500-avg}\\
+	\input{plots/quantitative-nyuv2-avg}\\
+	\input{plots/quantitative-sbd-avg}\\
+	\input{plots/quantitative-sunrgbd-avg}\\
+	\input{plots/quantitative-fash-avg}
+	\caption{\ARec, \AUE and \AEV (lower is better) on the used datasets.
+    We find that \ARec, \AUE and \AEV appropriately
+    summarize performance independent of the number of generated superpixels. Plausible
+    examples to consider are top-performing algorithms such as \ETPS, \ERS, \SLIC or \CRS
+    as well as poorly performing ones such as \QS and~\PF.
+	\textbf{Best viewed in color.}}
+	\label{fig:experiments-quantitative-avg}
+\end{figure*}
+
+\subsubsection{Depth}
+
+Depth information does not necessarily improve performance regarding \Rec, \UE and \EV.
+We consider Figures \ref{subfig:experiments-quantitative-nyuv2-rec.mean[0]},
+\ref{subfig:experiments-quantitative-nyuv2-ue_np.mean[0]} and \ref{subfig:experiments-quantitative-nyuv2-ev.mean[0]}
+presenting \Rec, \UE and \EV on the \NYU dataset. In particular, we consider \DASPr and \VCCSr.
+We observe, that \DASPr consistently outperforms \VCCSr.
+Therefore, we consider the performance of \DASPr and investigate whether depth information
+improves performance. Note that \DASPr performs similar to \SLICr, exhibiting slightly
+worse \Rec and slightly better \UE and \EV for large \K. However, \DASPr does not
+clearly outperform \SLICr. As indicated in Section \ref{sec:algorithms}, \DASP and \SLIC are
+both clustering-based algorithms. In particular, both algorithms are based on $k$-means
+using color and spatial information and \DASPr additionally utilizes depth information.
+This suggests that the clustering approach
+does not benefit from depth information. We note that a similar line of thought can be
+applied to \VCCS except that \VCCS directly operates within a point cloud, rendering the
+comparison problematic. Still we conclude that depth information used in the form of
+\DASP does not improve performance. This might be in contrast to
+experiments with different superpixel algorithms, \eg a \SLIC variant using depth information
+as in \cite{ZhangKanSchwingUrtasun:2013}. We suspect that regarding the used metrics, the number of superpixels ($\K = 200$)
+and the used superpixel algorithm, the effect of depth information might be more pronounced 
+in the experiments presented in \cite{ZhangKanSchwingUrtasun:2013} compared to ours.
+Furthermore, it should be noted that our evaluation is carried out in the 2D image plane, 
+which does not directly reflect the segmentation of point clouds.
+%We further note that evaluation is carried out in the 2D image plane only.

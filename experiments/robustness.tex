@@ -1,0 +1,64 @@
+\subsection{Robustness}
+\label{subsec:experiments-robustness}
+
+Similar to Neubert and Protzel \cite{NeubertProtzel:2012}, we investigate the influence
+of noise, blur and affine transformations.
+We evaluated all algorithms for $\K \approx 400$ on the \BSDS dataset.
+In the following we exemplarily discuss salt and pepper noise and average blurring.
+
+\begin{figure}[t]
+	\centering
+	\input{plots/implementations}
+	\caption{\Rec, \UE and runtime in seconds $t$ on the \BSDS dataset for different implementations of \SLIC, \SEEDS and \FH.
+	In particular, \reSEEDS and \reFH show slightly better performance which may be explained by
+	improved connectivity. \vlSLIC, in contrast, shows similar performance to \SLIC and, indeed,
+	the implementations are very similar. Finally, \preSLIC reduces runtime by reducing the number
+	of iterations spend on individual superpixels.
+    \textbf{Best viewed in color.}}
+	\label{fig:experiments-implementations-bsds500}
+    \vskip 12px
+    \input{legends/implementations-half}
+\end{figure}
+
+Most algorithms are robust to salt and pepper noise; blurring, in contrast, tends
+to reduce performance. We consider Figure \ref{subfig:experiments-robustness-noise} showing \Rec, \UE and \K
+for $p \in \{0, 0.04,$ $0.08, 0.12, 0.16\}$ being the probability of a pixel being salt or pepper.
+Note that Figure \ref{subfig:experiments-robustness-noise} shows the number of
+superpixels $K$ before enforcing connectivity as described in Section \ref{subsec:parameter-optimization-connectivity}.
+As we can deduce, salt and pepper noise only slightly reduces \Rec and \UE for most algorithms.
+Some algorithms compensate the noise by generating more superpixels such as \VCr or \SEAWr
+while only slightly reducing performance. In contrast, for \QSr the performance even increases
+-- a result of the strongly increasing number of superpixels.
+Similar results can be obtained for Gaussian additive noise.
+Turning to Figure \ref{subfig:experiments-robustness-blur}
+showing \Rec, \UE and \K for $k \in \{0, 5, 9, 13, 17\}$ being the size of a box
+filter used for average blurring. As expected, blurring leads to reduced performance with
+respect to both \Rec and \UE. Furthermore, it leads to a reduced number of generated
+superpixels for algorithms such as \QSr or \VCr. Similar observations can be made for motion blur as well as Gaussian blur.
+
+\begin{figure}[t]
+    \centering
+    \input{plots/robustness-salt-pepper}
+    \caption{The influence of salt and pepper noise for $p \in \{0, 0.04, 0.08, 0.12, 0.16\}$ being the
+    probability of salt or pepper. Regarding \Rec and \UE, most algorithms are not
+    significantly influence by salt and pepper noise. Algorithms such as
+    \QS and \VC compensate the noise by generating additional superpixels.
+    \textbf{Best viewed in color.}}
+    \label{subfig:experiments-robustness-noise}
+\end{figure}
+\begin{figure}[t]
+	\centering
+    \input{plots/robustness-blur}
+    \caption{The influence of average blur for $k \in \{0, 5, 9, 13, 17\}$ being
+    the filter size. As can be seen, blurring gradually reduces performance
+    -- which may be explained by vanishing image boundaries. In addition, for
+    algorithms such as \VC and \QS, blurring also leads to fewer superpixels being generated.
+    \textbf{Best viewed in color.}}
+    \label{subfig:experiments-robustness-blur}
+    \vskip 12px
+	\input{legends/full-half}
+\end{figure}
+
+Overall, most superpixel algorithms are robust to the considered noise models,
+while blurring tends to reduce performance. Although the corresponding experiments are omitted for brevity,
+we found that affine transformations do not influence performance.

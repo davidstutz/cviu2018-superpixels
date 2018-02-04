@@ -1,0 +1,32 @@
+\section{Parameter Optimization}
+
+We discuss the following two topics concerning parameter optimization in more detail:
+color spaces and controlling the number of superpixels in a consistent manner.
+Overall, we find that together with Section \ref{sec:parameter-optimization},
+the described parameter optimization procedure ensures fair comparison as far as possible.
+
+\subsection{Color Spaces}
+
+The used color space inherently influences the performance of superpixel algorithms as
+the majority of superpixel algorithms depend on comparing pixels within this color space.
+To ensure fair comparison, we included the color space in parameter optimization.
+In particular, we ensured that all algorithms support RGB color space and considered
+different color spaces only if reported in the corresponding publications or
+supported by the respective implementation. While some algorithms may benefit from
+different color spaces not mentioned in the corresponding publications, we decided to
+not consider additional color spaces for simplicity and to avoid additional overhead
+during parameter optimization. Parameter optimization yielded the color spaces
+highlighted in Table \ref{table:algorithms}.
+
+\subsection{Controlling the Number of Generated Superpixels}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+Some implementations, for example \ERS and \POISE, control the number of superpixels directly
+-- for example by stopping the merging of pixels as soon as the desired number of superpixels is met.
+In contrast, clustering-based algorithms (except for \DASP), contour evolution algorithms, watershed-based algorithms
+as well as path-based algorithms utilize a regular grid to initialize superpixels.
+Some algorithms allow to adapt the grid in both horizontal and vertical direction,
+while others require a Cartesian grid. We expected this difference to be reflected in
+the experimental results, however, this is not the case. We standardized initialization in both cases.

@@ -1,0 +1,108 @@
+\section{Benchmark}
+\label{sec:appendix-benchmark}
+
+In the following section we discuss the expressiveness of the used metrics
+and details regarding the computation of \ARec, \AUE and \AEV.
+
+\subsection{Expressiveness and Correlation}
+\label{subsec:appendix-benchmark-expressiveness}
+
+Complementing Section \ref{subsec:benchmark-correlation}, we exemplarily discuss
+the correlation computed for \SEEDS with $\K \approx 400$ on the \BSDS dataset as shown
+in Table \ref{table:benchmark-correlation}. We note that the following observations
+can be confirmed when considering different algorithms. Still, \SEEDS has the
+advantage of showing good overall performance (see the ranking in Section \ref{subsec:experiments-ranking})
+and low standard deviation in \Rec, \UE and \EV. We observe a correlation of $-0.47$
+between \Rec and \UE reflecting that \SEEDS exhibits high \Rec but comparably lower
+\UE on the \BSDS dataset. This justifies the choice of using both \Rec and \UE for quantitative
+comparison. The correlation of \UE and \ASA is $1$, which we explained with the
+respective definitions. More interestingly, the correlation of \UE and \UEL is $-0.7$.
+Therefore, we decided to discuss results regarding \UEL in more detail in
+\ref{sec:appendix-experiments}. Nevertheless, this may also confirm the observations
+by Neubert and Protzel \cite{NeubertProtzel:2012} as well as
+Achanta et al. \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012} that \UEL
+unjustly penalizes large superpixels.
+The high correlation of $-0.97$ between \MDE and \Rec has also been explained using
+the respective definitions. Interestingly, the correlation decreases with increased $\K$.
+This can, however, be explained by the implementation of \Rec, allowing a fixed tolerance
+of $0.0025$ times the image diagonal. The correlation of $-0.42$ between \ICV and \EV
+was explained by the missing normalization of \ICV compared to~\EV. This observation
+is confirmed by the decreasing correlation for larger $\K$ as, on average, superpixels
+get smaller thereby reducing the influence of normalization.
+
+\pgfplotstableset{
+    col sep=comma,
+    string type,
+    before row=\hline,
+    every last row/.style={after row=\hline},
+    every row/.style={after row=\hline},
+    columns/x/.style={column type=|l,column name={$\K = 400$}},
+    columns/rec/.style={column type=|l,column name=\Rec},
+    columns/uenp/.style={column type=|l,column name=\UE},
+    columns/uelevin/.style={column type=|l,column name=\UEL},
+    columns/asa/.style={column type=|l,column name=\ASA},
+    columns/co/.style={column type=|l,column name=\CO},
+    columns/ev/.style={column type=|l,column name=\EV},
+    columns/mde/.style={column type=|l,column name=\MDE},
+    columns/icv/.style={column type=|l|,column name=\ICV},
+    %columns/cd/.style={column type=|l|,column name=\CD},
+}
+
+\begin{table}[t]
+	\centering
+	{\scriptsize
+		\pgfplotstabletypeset[]{
+			x,rec,uenp,uelevin,asa,co,ev,mde,icv
+			\Rec,1,-0.47,-0.07,0.46,-0.08,0.11,-0.97,-0.04
+			\UE,-0.47,1,0.11,-1,0.07,-0.19,0.47,0.25
+			\UEL,-0.07,0.11,1,-0.1,-0.01,-0.03,0.09,0.05
+			\ASA,0.46,-1,-0.1,1,-0.07,0.18,-0.47,-0.24
+			\CO,-0.08,0.07,-0.01,-0.07,1,0.34,0.06,-0.05
+			\EV,0.11,-0.19,-0.03,0.18,0.34,1,-0.16,-0.42
+			\MDE,-0.97,0.47,0.09,-0.47,0.06,-0.16,1,0.06
+			\ICV,-0.04,0.25,0.05,-0.24,-0.05,-0.42,0.06,1
+			\CD,0.05,0,0,0,-0.86,-0.45,-0.03,0.21
+		}\\[4px]
+		\pgfplotstabletypeset[]{
+			x,rec,uenp,uelevin,asa,co,ev,mde,icv
+			\Rec,1,-0.4,-0.06,0.4,-0.11,0.16,-0.92,-0.09
+			\UE,-0.4,1,0.14,-1,-0.01,-0.22,0.45,0.27
+			\UEL,-0.06,0.14,1,-0.14,-0.07,-0.07,0.08,0.09
+			\ASA,0.4,-1,-0.14,1,0.01,0.21,-0.45,-0.27
+			\CO,-0.11,-0.01,-0.07,0.01,1,0.24,0.12,-0.15
+			\EV,0.16,-0.22,-0.07,0.21,0.24,1,-0.3,-0.52
+			\MDE,-0.92,0.45,0.08,-0.45,0.12,-0.3,1,0.15
+			\ICV,-0.09,0.27,0.09,-0.27,-0.15,-0.52,0.15,1
+			\CD,0.13,0,0.03,-0.01,-0.91,-0.31,-0.13,0.15
+		}\\[4px]
+		\pgfplotstabletypeset[]{
+			x,rec,uenp,uelevin,asa,co,ev,mde,icv
+			\Rec,1,-0.26,-0.05,0.28,-0.08,0.12,-0.66,-0.1
+			\UE,-0.26,1,0.16,-1,0.02,-0.2,0.41,0.28
+			\UEL,-0.05,0.16,1,-0.16,-0.02,-0.07,0.1,0.07
+			\ASA,0.28,-1,-0.16,1,-0.02,0.2,-0.41,-0.28
+			\CO,-0.08,0.02,-0.02,-0.02,1,0.19,0.13,-0.17
+			\EV,0.12,-0.2,-0.07,0.2,0.19,1,-0.36,-0.61
+			\MDE,-0.66,0.41,0.1,-0.41,0.13,-0.36,1,0.22
+			\ICV,-0.1,0.28,0.07,-0.28,-0.17,-0.61,0.22,1
+		}
+	}
+	\caption{Pearson correlation coefficient of all discussed metrics exemplarily shown for \SEEDS with $\K \approx 400$, $\K \approx 1200$ and $\K \approx 3600$.}
+	\label{table:benchmark-correlation}
+\end{table}
+
+\subsection{\AvgRec, \AvgUE and \AvgEV}
+
+As introduced in Section \ref{subsec:benchmark-average}, \ARec, \AUE and \AEV are intended to
+summarize algorithm performance independent of \K. To this end, we
+compute the area below the $\MR = (1 - \Rec)$, $\UE$ and $\UEV = (1 - \EV)$ curves within the interval
+$[\K_{\min}, \K_{\max}] = [200, 5200]$. As introduced before, the first corresponds to the
+Boundary \underline{M}iss \underline{R}ate (\MR) and the last is referred to as \underline{U}nexplained Variation (\UEV).
+In particular, we use the trapezoidal rule for integration. As the algorithms do not necessarily generate the desired number
+of superpixels, we additionally considered the following two cases for special treatment.
+First, if an algorithm generates more that $\K_{\max}$ superpixels (or less than $\K_{\min}$),
+we interpolate linearly to determine the value for $\K_{\max}$ ($\K_{\min}$).
+Second, if an algorithm consistently generates less that $\K_{\max}$ (or more than $\K_{\min}$)
+superpixels, we take the value lower or equal (greater or equal) and closest to $\K_{\max}$ ($\K_{\min}$).
+In the second case, a superpixel algorithm is penalized if it is not able to generate
+very few (\ie $\K_{\min}$) or very many (\ie $\K_{\max}$) superpixels.

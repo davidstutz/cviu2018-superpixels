@@ -1,0 +1,916 @@
+\subsection{Qualitative}
+\label{subsec:experiments-qualitative}
+
+\def\BSDSCroppedScale{0.25}
+\def\SBDCroppedScale{0.3}
+\def\FashCroppedScale{0.195}
+\begin{figure*}
+	\centering
+	\vspace{-0.5cm}
+	% W %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaai}\W}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+        \begin{center}
+            \BSDS
+        \end{center}
+        \vskip -6px
+		\includegraphics[height=1.65cm]{pictures/bsds500/w/cropped/w_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+        \begin{center}
+            \SBD
+        \end{center}
+        \vskip -6px
+		\includegraphics[height=1.65cm]{pictures/sbd/w/cropped/w_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+        \begin{center}
+            \Fash
+        \end{center}
+        \vskip -6px
+		\includegraphics[height=1.65cm]{pictures/fash/w/cropped/w_010_contours}
+	\end{subfigure}
+	% EAMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{ai}\EAMS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+        \begin{center}
+            \BSDS
+        \end{center}
+        \vskip -6px
+		\includegraphics[height=1.65cm]{pictures/bsds500/eams/cropped/eams_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+        \begin{center}
+            \SBD
+        \end{center}
+        \vskip -6px
+		\includegraphics[height=1.65cm]{pictures/sbd/eams/cropped/eams_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+        \begin{center}
+            \Fash
+        \end{center}
+        \vskip -6px
+		\includegraphics[height=1.65cm]{pictures/fash/eams/cropped/eams_010_contours}
+	\end{subfigure}\\
+	% NC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\NC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/nc/cropped/nc_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/nc/cropped/nc_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/nc/cropped/nc_010_contours}
+	\end{subfigure}
+	% FH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\FH}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/fh/cropped/fh_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/fh/cropped/fh_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/fh/cropped/fh_010_contours}
+	\end{subfigure}\\
+	% RW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\RW}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/rw/cropped/rw_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/rw/cropped/rw_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/rw/cropped/rw_010_contours}
+	\end{subfigure}
+	% QS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\QS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/qs/cropped/qs_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/qs/cropped/qs_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/qs/cropped/qs_010_contours}
+	\end{subfigure}\\
+	% PF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\PF}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/pf/cropped/pf_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/pf/cropped/pf_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/pf/cropped/pf_010_contours}
+	\end{subfigure}
+	% TP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\TP}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/tp/cropped/tp_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/tp/cropped/tp_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/tp/cropped/tp_010_contours}
+	\end{subfigure}\\
+	% CIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\CIS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/cis/cropped/cis_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/cis/cropped/cis_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/cis/cropped/cis_010_contours}
+	\end{subfigure}
+	% SLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\SLIC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/slic/cropped/slic_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/slic/cropped/slic_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/slic/cropped/slic_010_contours}
+	\end{subfigure}\\
+	% CRS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\CRS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/crs/cropped/crs_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/crs/cropped/crs_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/crs/cropped/crs_010_contours}
+	\end{subfigure}
+	% ERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\ERS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/ers/cropped/ers_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/ers/cropped/ers_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/ers/cropped/ers_010_contours}
+	\end{subfigure}\\
+	% PB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\PB}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/pb/cropped/pb_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/pb/cropped/pb_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/pb/cropped/pb_010_contours}
+	\end{subfigure}
+	% SEEDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{a}\SEEDS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/seeds/cropped/seeds_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/seeds/cropped/seeds_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/seeds/cropped/seeds_010_contours}
+	\end{subfigure}\\
+	% TPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\TPS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/tps/cropped/tps_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/tps/cropped/tps_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/tps/cropped/tps_010_contours}
+	\end{subfigure}
+	% VC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\VC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/vc/cropped/vc_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/vc/cropped/vc_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/vc/cropped/vc_010_contours}
+	\end{subfigure}\\
+	% CCS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\CCS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/ccs/cropped/ccs_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/ccs/cropped/ccs_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/ccs/cropped/ccs_010_contours}
+	\end{subfigure}
+	% CW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\CW}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/cw/cropped/cw_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/cw/cropped/cw_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/cw/cropped/cw_010_contours}
+	\end{subfigure}\\
+	% ERGC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\ERGC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/ergc/cropped/ergc_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/ergc/cropped/ergc_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/ergc/cropped/ergc_010_contours}
+	\end{subfigure}
+	% MSS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\MSS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/mss/cropped/mss_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/mss/cropped/mss_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/mss/cropped/mss_010_contours}
+	\end{subfigure}\\
+	% preSLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{a}\preSLIC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/preslic/cropped/preslic_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/preslic/cropped/preslic_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/preslic/cropped/preslic_010_contours}
+	\end{subfigure}
+	% WP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\WP}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/wp/cropped/wp_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/wp/cropped/wp_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/wp/cropped/wp_010_contours}
+	\end{subfigure}\\
+	% ETPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\ETPS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/etps/cropped/etps_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/etps/cropped/etps_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/etps/cropped/etps_010_contours}
+	\end{subfigure}
+	% LSC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\LSC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/lsc/cropped/lsc_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/lsc/cropped/lsc_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/lsc/cropped/lsc_010_contours}
+	\end{subfigure}\\
+	% POISE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{a}\POISE}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/poise/cropped/poise_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/poise/cropped/poise_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/poise/cropped/poise_010_contours}
+	\end{subfigure}
+	% SEAW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{ai}\SEAW}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.16\textwidth}
+		\includegraphics[height=1.65cm]{pictures/bsds500/seaw/cropped/seaw_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sbd/seaw/cropped/seaw_0004774_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.10\textwidth}
+		\includegraphics[height=1.65cm]{pictures/fash/seaw/cropped/seaw_010_contours}
+	\end{subfigure}
+	\caption{Qualitative results on the \BSDS, \SBD and \Fash datasets. Excerpts from the
+	images in Figure \ref{fig:datasets} are shown for $K \approx 400$ in the upper left corner
+	and $K \approx 1200$ in the lower right corner. Superpixel boundaries are depicted
+	in black; best viewed in color. We judge visual quality on the basis of
+	boundary adherence, compactness, smoothness and regularity.
+	Boundary adherence can be judged both on the caterpillar image as well 
+	as on the woman image -- the caterpillar's boundaries are hard to detect and 
+	the woman's face exhibits small details. In contrast, compactness, regularity and smoothness 
+	can be evaluated considering the background in the caterpillar and see images.
+	\textbf{Best viewed in color.}}
+	\label{fig:experiments-qualitative-bsds500-sbd-fash}
+\end{figure*}
+
+\def\NYUCroppedScale{0.18}
+\def\SUNRGBDCroppedScale{0.14}
+\begin{figure*}
+	\centering
+	% NC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\NC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/nc/cropped/nc_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/nc/cropped/nc_00000285_contours_scaled}
+	\end{subfigure}
+	% RW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\RW}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/rw/cropped/rw_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/rw/cropped/rw_00000285_contours_scaled}
+	\end{subfigure}
+	% SEAW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{ai}\SEAW}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/seaw/cropped/seaw_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/seaw/cropped/seaw_00000285_contours_scaled}
+	\end{subfigure}\\[4px]
+	% W %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaai}\W}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/w/cropped/w_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\begin{center}
+			\SUNRGBD
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/w/cropped/w_00004732_contours}
+	\end{subfigure}
+	% EAMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{ai}\EAMS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/eams/cropped/eams_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\begin{center}
+			\SUNRGBD
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/eams/cropped/eams_00004732_contours}
+	\end{subfigure}
+	% FH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\FH}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\begin{center}
+			\NYU
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/nyuv2/fh/cropped/fh_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\begin{center}
+			\SUNRGBD
+		\end{center}
+		\vskip -6px
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/fh/cropped/fh_00004732_contours}
+	\end{subfigure}\\
+	% QS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\QS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/qs/cropped/qs_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/qs/cropped/qs_00004732_contours}
+	\end{subfigure}
+	% PF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\PF}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/pf/cropped/pf_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/pf/cropped/pf_00004732_contours}
+	\end{subfigure}
+	% TP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\TP}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/tp/cropped/tp_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/tp/cropped/tp_00004732_contours}
+	\end{subfigure}\\
+	% CIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\CIS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/cis/cropped/cis_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/cis/cropped/cis_00004732_contours}
+	\end{subfigure}
+	% SLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\SLIC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/slic/cropped/slic_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/slic/cropped/slic_00004732_contours}
+	\end{subfigure}
+	% CRS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\CRS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/crs/cropped/crs_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/crs/cropped/crs_00004732_contours}
+	\end{subfigure}\\
+	% ERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\ERS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/ers/cropped/ers_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/ers/cropped/ers_00004732_contours}
+	\end{subfigure}
+	% PB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\PB}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/pb/cropped/pb_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/pb/cropped/pb_00004732_contours}
+	\end{subfigure}
+	% DASP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\DASP}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/dasp/cropped/dasp_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/dasp/cropped/dasp_00004732_contours}
+	\end{subfigure}\\
+	% SEEDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{a}\SEEDS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/seeds/cropped/seeds_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/seeds/cropped/seeds_00004732_contours}
+	\end{subfigure}
+	% TPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\TPS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/tps/cropped/tps_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/tps/cropped/tps_00004732_contours}
+	\end{subfigure}
+	% VC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaai}\VC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/vc/cropped/vc_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/vc/cropped/vc_00004732_contours}
+	\end{subfigure}\\
+	% CCS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\CCS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/ccs/cropped/ccs_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/ccs/cropped/ccs_00004732_contours}
+	\end{subfigure}
+	% VCCS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\VCCS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/vccs/cropped/vccs_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/vccs/cropped/vccs_00004732_contours}
+	\end{subfigure}
+	% CW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\CW}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/cw/cropped/cw_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/cw/cropped/cw_00004732_contours}
+	\end{subfigure}\\
+	% ERGC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\ERGC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/ergc/cropped/ergc_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/ergc/cropped/ergc_00004732_contours}
+	\end{subfigure}
+	% MSS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\MSS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/mss/cropped/mss_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/mss/cropped/mss_00004732_contours}
+	\end{subfigure}
+	% preSLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{a}\preSLIC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/preslic/cropped/preslic_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/preslic/cropped/preslic_00004732_contours}
+	\end{subfigure}\\
+	% WP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\WP}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/wp/cropped/wp_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/wp/cropped/wp_00004732_contours}
+	\end{subfigure}
+	% LRW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\begin{subfigure}[b]{0.02\textwidth}
+	%	\rotatebox{90}{\small\LRW}
+	%\end{subfigure}
+	%\begin{subfigure}[b]{0.1375\textwidth}
+	%	\includegraphics[height=1.65cm]{pictures/nyuv2/lrw/cropped/lrw_00000561_contours}
+	%\end{subfigure}
+	%\begin{subfigure}[b]{0.129\textwidth}
+	%	\includegraphics[height=1.65cm]{pictures/nyuv2/lrw/cropped/lrw_00000561_contours}
+	%\end{subfigure}\\
+	% ETPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\ETPS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/etps/cropped/etps_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/etps/cropped/etps_00004732_contours}
+	\end{subfigure}
+	% LSC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aaa}\LSC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/lsc/cropped/lsc_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/lsc/cropped/lsc_00004732_contours}
+	\end{subfigure}\\
+	% POISE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{a}\POISE}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\includegraphics[height=1.65cm]{pictures/nyuv2/poise/cropped/poise_00000561_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\includegraphics[height=1.65cm]{pictures/sunrgbd/poise/cropped/poise_00004732_contours}
+	\end{subfigure}
+	% Puffer
+	\begin{subfigure}[b]{0.02\textwidth}
+		\hphantom{aa}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\hphantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaii}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\hphantom{aaaaaaaaaaaaaaaaaaaaaaaaaaa}
+	\end{subfigure}
+	% Puffer
+	\begin{subfigure}[b]{0.02\textwidth}
+		\hphantom{aa}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.1375\textwidth}
+		\hphantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaii}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.129\textwidth}
+		\hphantom{aaaaaaaaaaaaaaaaaaaaaaaaaaa}
+	\end{subfigure}
+	\caption{Qualitative results on the \NYU and \SUNRGBD datasets. Excerpts from the images
+	in Figure \ref{fig:datasets} are shown for $K \approx 400$ in the upper left corner
+	and $K \approx 1200$ in the lower right corner. Superpixel boundaries are depicted in black; best viewed in color.
+	\NC, \RW and \SEAW could not be evaluated on the \SUNRGBD dataset due
+	to exhaustive memory usage of the corresponding MatLab implementations.
+	Therefore, results for the \NYU dataset are shown.
+    Visual quality is judged regarding boundary adherence, compactness,
+	smoothness and regularity. We also find
+	that depth information, as used in \DASP and \VCCS, may help resemble the underlying 3D-structure.
+	\textbf{Best viewed in color.}}
+	\label{fig:experiments-qualitative-nyuv2-sunrgbd}
+\end{figure*}
+\begin{figure*}
+	\centering
+	% SLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aa}\SLIC}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.141\textwidth}
+		\includegraphics[height=1.525cm]{pictures/compactness/bsds500/slic/score/1/cropped/slic_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.141\textwidth}
+		\includegraphics[height=1.525cm]{pictures/compactness/bsds500/slic/score/10/cropped/slic_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.141\textwidth}
+		\includegraphics[height=1.525cm]{pictures/compactness/bsds500/slic/score/80/cropped/slic_35028_contours}
+	\end{subfigure}
+	% CRS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{subfigure}[b]{0.02\textwidth}
+		\rotatebox{90}{\small\hphantom{aai}\CRS}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.141\textwidth}
+		\includegraphics[height=1.525cm]{pictures/compactness/bsds500/crs/score/0.001/cropped/crs_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.141\textwidth}
+		\includegraphics[height=1.525cm]{pictures/compactness/bsds500/crs/score/0.01/cropped/crs_35028_contours}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.141\textwidth}
+		\includegraphics[height=1.525cm]{pictures/compactness/bsds500/crs/score/0.1/cropped/crs_35028_contours}
+	\end{subfigure}
+	\caption{The influence of a low, on the left, and high, on the right, compactness parameter
+	demonstrated on the caterpillar image from the \BSDS datasets using \SLIC and \CRS
+	for $\K \approx 400$. Superpixel boundaries are depicted in black; best viewed in color.
+	Superpixel algorithms providing a compactness parameter allow to trade boundary
+	adherence for compactness.
+	\textbf{Best viewed in color.}}
+	\label{fig:experiments-qualitative-bsds500-compactness}
+\end{figure*}
+
+Visual quality is best determined by considering compactness, regularity and smoothness
+on the one hand and boundary adherence on the other. Here, compactness refers to
+the area covered by individual superpixels (as captured in Equation \eqref{eq:co});
+regularity corresponds to both the superpixels' sizes and their arrangement;
+and smootness refers to the superpixels' boundaries.
+Figures \ref{fig:experiments-qualitative-bsds500-sbd-fash}
+and \ref{fig:experiments-qualitative-nyuv2-sunrgbd} show results on all datasets.
+We begin by discussing boundary adherence, in particular with regard to the difference
+between superpixel and oversegmentation algorithms, before considering compactness,
+smoothness and regularity.
+
+The majority of algorithms provides solid adherence to important image boundaries, especially for large \K.
+%Except for a handful of algorithms, boundary adherence is mostly good, especially
+%for larger \K.
+We consider the woman image -- in particular, the background --
+and the caterpillar image in Figure~\ref{fig:experiments-qualitative-bsds500-sbd-fash}.
+Algorithms with inferior boundary adherence are easily identified as those not capturing
+the pattern in the background or the silhouette of the caterpillar:
+\FH, \QS, \CIS, \PF, \PB, \TPS, \TP and \SEAW.
+The remaining algorithms do not necessarily
+capture all image details, as for example the woman's face, but important image boundaries
+are consistently captured. 
+We note that of the three evaluated oversegmentation algorithms, \ie \EAMS, \FH and \QS,
+only \EAMS demonstrates adequate boundary adherence.
+Furthermore, we observe that increasing \K results in more details
+being captured by all algorithms. Notable algorithms regarding boundary adherence include \CRS, \ERS, \SEEDS, \ERGC and \ETPS.
+These algorithms are able to capture even smaller details such as the coloring of the caterpillar or
+elements of the woman's face.
+%Overall, most algorithms are capable of capturing important
+%image boundaries.
+
+%After discussing boundary adherence, we are going to focus more closely on compactness, smoothness and regularity.
+%While these properties are inherently linked, we discuss compactness separately
+%as many superpixel algorithms provide a compactness parameter.
+
+Compactness strongly varies across algorithms and a compactness parameter
+is beneficial to control the degree of compactness as it allows to gradually trade boundary adherence for compactness.
+We consider the caterpillar image in Figure~\ref{fig:experiments-qualitative-bsds500-sbd-fash}.
+\TP, \RW, \W, and \PF are examples for algorithms not providing a compactness parameter.
+While \TP generates very compact superpixels and \RW tends to resemble grid-like superpixels, \W and \PF generate highly
+non-compact superpixels. In this regard, compactness depends on algorithm and
+implementation details (\eg grid-like initialization) and varies across algorithms.
+For algorithms providing control over the compactness of the generated superpixels,
+we find that parameter optimization has strong impact on compactness.
+Examples are \CRS, \LSC, \ETPS and \ERGC showing highly irregular superpixels,
+while \SLIC, \CCS, \VC and \WP generate more compact superpixels.
+For \DASP and \VCCS, requiring depth information, similar observations can be made
+on the kitchen image in Figure \ref{fig:experiments-qualitative-nyuv2-sunrgbd}.
+Inspite of the influence of parameter optimization, we find that a compactness parameter
+is beneficial. This can best be observed in Figure~\ref{fig:experiments-qualitative-bsds500-compactness}, showing superpixels
+generated by \SLIC and \CRS for different degrees of compactness. We observe that compactness
+can be increased while only gradually sacrificing boundary adherence.
+%Altogether, we find that a compactness parameter is important for controlling the
+%degree of compactness as not all algorithms necessarily generate compact superpixels.
+
+We find that compactness does not necessarily induce regularity and smoothness;
+some algorithms, however, are able to unite compactness, regularity and smoothness.
+Considering the sea image in Figure~\ref{fig:experiments-qualitative-bsds500-sbd-fash}
+for \CIS and \TP, we observe that compact superpixels are not necessarily arranged regularly.
+Similarly, compact superpixels do not need to exhibit smooth boundaries, as can be seen for \PB.
+On the other hand, compact superpixels are often generated in a regular fashion,
+as can be seen for many algorithms providing a compactness parameter such as \SLIC, \VC and \CCS.
+In such cases, compactness also induces smoother and more regular superpixels.
+We also observe that many algorithms exhibiting excellent boundary adherence such
+as \CRS, \SEEDS or \ETPS generate highly irregular and non-smooth superpixels.
+These observations also justify the separate consideration of compactness,
+regularity and smoothness to judge visual quality.
+While the importance of compactness, regularity and smoothness may depend on the
+application at hand, these properties represent the trade-off between
+abstraction from and sensitivity to low-level image content which
+is inherent to all superpixel algorithms.
+
+In conclusion, we find that the evaluated path-based and density-based algorithms as well as oversegmentation algorithms show
+inferior visual quality. On the other hand, clustering-based, contour evolution
+and iterative energy optimization algorithms mostly demonstrate good boundary adherence
+and some provide a compactness parameter, \eg \SLIC, \ERGC and \ETPS. Graph-based algorithms
+show mixed results -- algorithms such as \FH, \CIS and \PB show inferior
+boundary adherence, while \ERS, \RW, \NC and \POISE exhibit better boundary adherence.
+However, good boundary adherence, especially regarding details in the image, often
+comes at the price of lower compactness, regularity and/or smoothness as can be seen for \ETPS and \SEEDS.
+Furthermore, compactness, smoothness and regularity are not necessarily linked and should be discussed separately.
+
+\subsubsection{Compactness}
+\label{subsubsec:experiments-qualitative-compactness}
+
+\begin{figure}[t]
+	\centering
+	\input{plots/qualitative-compactness}
+	\caption{\CO on the \BSDS and \NYU datasets. Considering Figures \ref{fig:experiments-qualitative-bsds500-sbd-fash}
+	and \ref{fig:experiments-qualitative-nyuv2-sunrgbd}, \CO appropriately reflects compactness.
+	However, it does not take into account other aspects of visual quality such as regularity and smoothness.
+	Therefore, we find that \CO is of limited use in a quantitative assessment of visual quality.
+	\textbf{Best viewed in color.}}
+	\label{fig:experiments-qualitative-compactness}
+    \vskip 12px
+    \input{legends/full-half}
+\end{figure}
+
+\CO measures compactness, however, does not reflect regularity or smoothness;
+therefore, \CO is not sufficient to objectively judge visual quality. We
+consider Figure \ref{fig:experiments-qualitative-compactness}, showing \CO on
+the \BSDS and \NYU datasets, and we observe that \CO correctly measures compactness. For example,
+\WPr, \TPr and \CISr, exhibiting high \CO, also present very compact superpixels
+in Figures \ref{fig:experiments-qualitative-bsds500-sbd-fash} and \ref{fig:experiments-qualitative-nyuv2-sunrgbd}.
+However, these superpixels do not necessarily have to be visually appealing,
+\ie may lack regularity and/or smoothness.
+This can exemplarily be seen for \TPS, exhibiting high compactness bur poor regularity,
+or \PB showing high compactness but inferior smoothness.
+Overall, we find that \CO should not be considered isolated from a
+qualitative evaluation.
+
+\subsubsection{Depth}
+\label{subsubsec:experiments-qualitative-depth}
+
+Depth information helps superpixels resemble the 3D-structure within the image.
+Considering Figure \ref{fig:experiments-qualitative-nyuv2-sunrgbd}, in particular
+both images for \DASP and \VCCS, we deduce that depth information may be beneficial
+for superpixels to resemble the 3D-structure of a scene. For example, when considering
+planar surfaces (e.g. the table) in both images from Figure \ref{fig:experiments-qualitative-nyuv2-sunrgbd} for
+\DASP, we clearly see that the superpixels easily align with the surface in a way perceived as 3-dimensional.
+For \VCCS, this effect is less observable which may be due to the compactness parameter.

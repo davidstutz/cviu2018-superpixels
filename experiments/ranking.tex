@@ -1,0 +1,19 @@
+\subsection{Ranking}
+\label{subsec:experiments-ranking}
+
+We conclude the experimental part of this paper with a ranking with respect to \ARec and \AUE
+ -- reflecting the objective used for parameter optimization. Unfortunately, the high number
+of algorithms as well as the low number of datasets prohibits using statistical
+tests to extract rankings, as done in other benchmarks (\eg \cite{Demsar:2006,DollarWojekSchielePerona:2009}).
+Therefore, Table \ref{table:ranking} presents average \ARec and \AUE, average ranks
+as well as the corresponding rank matrix.
+On each dataset, the algorithms were ranked according to $\ARec + \AUE$ where
+lowest $\ARec + \AUE$ corresponds to the best rank, \ie rank one.
+%The average
+%rank is then computed by dividing through the number of datasets each algorithm was evaluated on.
+The corresponding rank matrix represents the rank distribution
+(\ie the frequencies of the attained ranks) for each algorithm.
+We find that the presented average ranks provide a founded overview of the evaluated 
+algorithms, summarizing many of the observations discussed before.
+In the absence of additional constraints, Table \ref{table:ranking}
+may be used to select suitable superpixel algorithms.

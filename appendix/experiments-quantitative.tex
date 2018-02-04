@@ -1,0 +1,100 @@
+\subsection{Quantitative}
+\label{subsec:appendix-experiments-quantitative}
+
+\begin{figure*}
+	\centering
+	\input{plots/appendix-sbd-avg}
+	\input{plots/appendix-sunrgbd-avg}
+	\input{plots/appendix-fash-avg}
+	\caption{\Rec, \UE and \EV on the \SBD, \SUNRGBD and \Fash datasets. Similar to the results
+	presented for the \BSDS and \NYU datasets (compare Figures \ref{fig:experiments-quantitative-bsds500}
+	and \ref{fig:experiments-quantitative-nyuv2}), \Rec and \UE give a roguh overview of
+	algorithm performance with respect to ground truth. Concerning \Rec, we observe
+	similar performance across the three datasets, while algorithms may show different
+	behavior with respect to \UE. Similarly, \EV gives a ground truth independent
+	overview of algorithm performance where algorithms show similar performance across datasets.
+	\textbf{Best viewed in color.}}
+	\label{fig:appendix-experiments-sbd-sunrgbd-fash}
+	\vskip 12px
+	\input{legends/full+depth}
+\end{figure*}
+\begin{figure*}
+	\centering
+	\input{plots/appendix-runtime}
+	\caption{Runtime in seconds $t$ on the \SBD, \SUNRGBD and \Fash datasets. The results allow
+	to get an impression of how runtime of individual algorithms scales with the size
+	of the image. In particular, we deduce that most algorithm's runtime scales linear
+	in the input size, while the number of generated superpixels does have little influence.
+	\textbf{Best viewed in color.}}
+	\label{fig:appendix-experiments-runtime}
+\end{figure*}
+\begin{figure*}
+	\centering
+	\input{plots/appendix-bsds500-ue-asa-uel}\\
+	\input{plots/appendix-nyuv2-ue-asa-uel}
+	\caption{\UE, \ASA and \UEL on the \BSDS and \NYU datasets. We find that \ASA does not
+	provide new insights compared to \UE, as it closely reflects $(1 - \UE)$ except
+	for a minor absolute offset. \UEL, in contrast, provides a different point view
+	compared to \UE. However, \UEL is harder to interpret and strongly varies across datasets.
+	\textbf{Best viewed in color.}}
+	\label{fig:appendix-experiments-bsds500-nyuv2}
+	\vskip 12px
+	\input{legends/full+depth}
+\end{figure*}
+
+The following experiments complement the discussion in Section \ref{subsec:experiments-quantitative}
+in two regards. First, we present additional experiments considering both \ASA and
+\UEL on the \BSDS and \NYU datasets. Then, we consider \Rec, \UE and \EV in more details for
+the remaining datasets, \ie the \SBD, \SUNRGBD and \Fash datasets. We begin by discussing \ASA
+and \UEL, also in regard to the observations made in Sections \ref{subsec:benchmark-correlation} and \ref{sec:appendix-benchmark}.
+
+As observed on the \BSDS and \NYU datasets in Section \ref{subsec:experiments-quantitative},
+\Rec and \UE can be used to roughly asses superpixel algorithms based on ground
+truth. However, for large \K, these metrics are not necessarily
+sufficient to discriminate between the superpixel algorithms. Considering Figure
+\ref{fig:appendix-experiments-sbd-sunrgbd-fash}, in particular with regard to
+\Rec, we can identify algorithms showing above-average performance such as \ETPS
+and \SEEDS. These algorithms perform well on all three datasets. Similarly,
+\PF, \QS, \SEAW and \TPS perform poorly on all three datasets. Regarding \UE,
+in contrast, top-performer across all three algorithms are not identified as easily.
+For example, \POISE demonstrates low \UE on the \SBD and \Fash datasets, while performing
+poorly on the \SUNRGBD dataset. Similarly, \ERS shows excellent performance on the \SUNRGBD dataset,
+while being outperformed by \POISE as well as \ETPS on the \SBD and \Fash datasets.
+Overall, \Rec and \UE do not necessarily give a consistent
+view on the performance of the superpixel algorithms across datasets. This may also
+be explained by the ground truth quality as already discussed in Section \ref{subsec:experiments-quantitative}.
+
+The above observations also justify the use of \EV to judge superpixel algorithms
+independent of ground truth. Considering Figure \ref{fig:appendix-experiments-sbd-sunrgbd-fash},
+in particular, with regard to \EV, we can observe a more consistent view across the datasets.
+Both, top-performing algorithms such as \ETPS and \SEEDS, as well as poorly performing
+algorithms such as \PF, \PB or \TPS can easily be identified. In between these two extremes,
+superpixel algorithms are easier to discriminate compared to \Rec and \UE. Furthermore,
+some superpixel algorithms such as \QS, \FH or \CIS are performing better compared to
+\Rec or \UE. This confirms the observations that ground truth independent assessment
+is beneficial but cannot replace \Rec or \UE.
+
+We find that \ASA closely mimicks the behavior of $(1 - \UE)$ while \UEL may
+complement our discussion with an additional viewpoint which is, however, hard to interpret.
+We consider Figure \ref{fig:appendix-experiments-bsds500-nyuv2}
+showing \UE, \ASA and \UEL for both the \BSDS and \NYU datasets. Focussing on \UE and
+\ASA, we easily see that \ASA nearly reflects $(1 - \UE)$ while being a small
+constant off. In particular, all algorithms exhibit nearly the same behavior,
+while absolutely the algorithms show higher \ASA
+compared to $(1 - \UE)$. This demonstrates that \ASA does not give new insights
+with respect to the quantitative comparison of superpixel algorithms. In contrast,
+the algorithms show different behavior considering \UEL. This is mainly due to the
+unconstrained range of \UEL (compared to $\UE \in [0,1]$). In particular,
+for algorithms such as \EAMS and \FH, \UEL reflects the behavior of $\max\UE$
+as shown in Figure \ref{subfig:experiments-quantitative-bsds500-ue_np.max_max}.
+The remaining algorithms lie more closely together.
+Still, algorithms such as \ERS, \SEEDS or \PB show better \UEL than \UE (seen relatively to the remaining algorithms).
+In the case of \EAMS and \FH, high \UEL may indeed
+be explained by the considerations of Neubert and Protzel \cite{NeubertProtzel:2012}
+arguing that \UEL unjustly penalizes large superpixels slightly overlapping with multiple ground truth segments.
+For the remaining algorithms,
+the same argument can only be applied in smaller scale as these algorithms usually
+do not generate large superpixels. In this line of throught, the excellent
+performance of \ERS may be explained by the employed regularizer for enforcing
+uniform superpixel size. Overall, \ASA does not contribute to an insightful discussion,
+while \UEL may be considered in addition to \UE to complete the picture of algorithm performance.

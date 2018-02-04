@@ -1,0 +1,444 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compactness
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{subfigure}[b]{\halftwoone\textwidth}\phantomsubcaption\label{subfig:parameter-optimization-compactness-rec}
+    \begin{tikzpicture}
+        % SLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=1,xmax=160,
+                xtick=\empty,
+                yshift=-0cm,
+                ylabel=\Rec,
+                xlabel=compactness,
+                title=\BSDS,
+                title style={xshift=2cm}]
+
+            \addplot[SLIC,transparent] coordinates{
+                (1,0.695708)
+                (5,0.698356)
+                (10,0.708017)
+                (20,0.726845)
+                (40,0.743767)
+                (80,0.718759)
+                (160,0.628553)
+            };
+        \end{axis}
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=1,xmax=160,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[SLIC] coordinates{
+                (1,0.695708)
+                (5,0.698356)
+                (10,0.708017)
+                (20,0.726845)
+                (40,0.743767)
+                (80,0.718759)
+                (160,0.628553)
+            };
+            \label{plot:parameter-optimization-iterations-slic}
+        \end{axis}
+
+        % CRS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=0,xmax=0.1,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CRS] coordinates{
+                (0.001,0.965601)
+                (0.005,0.938007)
+                (0.01,0.900849)
+                (0.05,0.671317)
+                (0.1,0.564656)
+            };
+            \label{plot:parameter-optimization-iterations-crs}
+        \end{axis}
+
+        % reSEEDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %\begin{axis}[
+        %        POcompactnessRec,
+        %        xmin=0,xmax=0.5,
+        %        axis y line=none,
+        %        axis x line=none,
+        %        xlabel=none,
+        %        ylabel=none]
+        %
+        %    \addplot[reSEEDS] coordinates{
+        %        (0,0.941375)
+        %        (0.25,0.911667)
+        %        (0.5,0.886816)
+        %    };
+        %    \label{plot:parameter-optimization-iterations-reseeds}
+        %\end{axis}
+
+        % VC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=10,xmax=250,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[VC] coordinates{
+                (10,0.939249)
+                (25,0.893879)
+                (50,0.842431)
+                (100,0.784252)
+                (250,0.700503)
+            };
+            \label{plot:parameter-optimization-iterations-vc}
+        \end{axis}
+
+        % CW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=0,xmax=10,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CW] coordinates{
+                (0.01,0.742971)
+                (0.05,0.747513)
+                (0.1,0.746982)
+                (0.5,0.719384)
+                (1,0.690183)
+                (5,0.551541)
+                (10,0.48157)
+            };
+            \label{plot:parameter-optimization-iterations-cw}
+        \end{axis}
+
+        % preSLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=1,xmax=160,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[preSLIC] coordinates{
+                (1,0.7024)
+                (5,0.719238)
+                (10,0.735199)
+                (20,0.742702)
+                (40,0.719054)
+                (80,0.626927)
+                (160,0.494195)
+            };
+            \label{plot:parameter-optimization-iterations-preslic}
+        \end{axis}
+
+        % ERGC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=0,xmax=25,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[ERGC] coordinates{
+                (0,0.793333)
+                (1,0.790007)
+                (2,0.787139)
+                (5,0.779947)
+                (10,0.770237)
+                (25,0.749098)
+            };
+            \label{plot:parameter-optimization-iterations-ergc}
+        \end{axis}
+
+        % LSC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=0,xmax=0.5,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[LSC] coordinates{
+                (0,0.89937)
+                (0.01,0.898078)
+                (0.05,0.884433)
+                (0.1,0.853266)
+                (0.25,0.747625)
+                (0.5,0.61054)
+            };
+            \label{plot:parameter-optimization-iterations-lsc}
+        \end{axis}
+
+        % ETPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=0,xmax=10,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[ETPS] coordinates{
+                (0.01,0.933014)
+                (0.05,0.91386)
+                (0.1,0.898893)
+                (0.5,0.832607)
+                (1,0.789218)
+                (5,0.661253)
+                (10,0.601947)
+            };
+            \label{plot:parameter-optimization-iterations-etps}
+        \end{axis}
+
+        % CCS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessRec,
+                xmin=25,xmax=500,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CCS] coordinates{
+               	(25,0.845181)
+               	(50,0.81119)
+               	(100,0.76329)
+               	(250,0.668066)
+               	(500,0.578618)
+            };
+            \label{plot:parameter-optimization-iterations-ccs}
+        \end{axis}
+    \end{tikzpicture}
+\end{subfigure}
+\begin{subfigure}[b]{\halftwoone\textwidth}\phantomsubcaption\label{subfig:parameter-optimization-compactness-co}
+    \begin{tikzpicture}
+        % SLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=1,xmax=160,
+                xtick=\empty,
+                yshift=-0cm,
+                %xlabel=\ref{plot:parameter-optimization-iterations-slic},
+                ylabel=\CO,
+                xlabel=compactness]
+
+            \addplot[SLIC,transparent] coordinates{
+                (1,0.18298)
+                (5,0.189713)
+                (10,0.205343)
+                (20,0.240073)
+                (40,0.298561)
+                (80,0.388942)
+                (160,0.503195)
+            };
+        \end{axis}
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=1,xmax=160,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[SLIC] coordinates{
+                (1,0.18298)
+                (5,0.189713)
+                (10,0.205343)
+                (20,0.240073)
+                (40,0.298561)
+                (80,0.388942)
+                (160,0.503195)
+            };
+            \label{plot:parameter-optimization-iterations-slic}
+        \end{axis}
+
+        % CRS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=0,xmax=0.1,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CRS] coordinates{
+                (0.001,0.189319)
+                (0.005,0.168872)
+                (0.01,0.171872)
+                (0.05,0.34985)
+                (0.1,0.470495)
+            };
+            \label{plot:parameter-optimization-iterations-crs}
+        \end{axis}
+
+        % reSEEDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %\begin{axis}[
+        %        POcompactnessCO,
+        %        xmin=0,xmax=0.5,
+        %        axis y line=none,
+        %        axis x line=none,
+        %        xlabel=none,
+        %        ylabel=none]
+        %
+        %    \addplot[reSEEDS] coordinates{
+        %        (0,0.0588565)
+        %        (0.25,0.140091)
+        %        (0.5,0.187924)
+        %    };
+        %    \label{plot:parameter-optimization-iterations-reseeds}
+        %\end{axis}
+
+        % VC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=10,xmax=250,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[VC] coordinates{
+                (10,0.319304)
+                (25,0.330338)
+                (50,0.363377)
+                (100,0.414478)
+                (250,0.488505)
+            };
+            \label{plot:parameter-optimization-iterations-vc}
+        \end{axis}
+
+        % CW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=0,xmax=10,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CW] coordinates{
+                (0.01,0.24516)
+                (0.05,0.268145)
+                (0.1,0.280659)
+                (0.5,0.327715)
+                (1,0.362302)
+                (5,0.474638)
+                (10,0.539703)
+            };
+            \label{plot:parameter-optimization-iterations-cw}
+        \end{axis}
+
+        % preSLIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=1,xmax=160,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[preSLIC] coordinates{
+                (1,0.182145)
+                (5,0.202452)
+                (10,0.233752)
+                (20,0.286967)
+                (40,0.371689)
+                (80,0.494547)
+                (160,0.63925)
+            };
+            \label{plot:parameter-optimization-iterations-preslic}
+        \end{axis}
+
+        % ERGC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=0,xmax=25,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[ERGC] coordinates{
+                (0,0.225633)
+                (1,0.247766)
+                (2,0.257937)
+                (5,0.278561)
+                (10,0.300108)
+                (25,0.337102)
+            };
+            \label{plot:parameter-optimization-iterations-ergc}
+        \end{axis}
+
+        % LSC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=0,xmax=0.5,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[LSC] coordinates{
+                (0,0.176833)
+                (0.01,0.178685)
+                (0.05,0.216972)
+                (0.1,0.272364)
+                (0.25,0.408945)
+                (0.5,0.552146)
+            };
+            \label{plot:parameter-optimization-iterations-lsc}
+        \end{axis}
+
+        % ETPS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=0,xmax=10,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[ETPS] coordinates{
+                (0.01,0.104933)
+                (0.05,0.153633)
+                (0.1,0.185856)
+                (0.5,0.293024)
+                (1,0.351901)
+                (5,0.499763)
+                (10,0.551916)
+            };
+            \label{plot:parameter-optimization-iterations-etps}
+        \end{axis}
+
+        % CCS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{axis}[
+                POcompactnessCO,
+                xmin=25,xmax=500,
+                axis y line=none,
+                axis x line=none,
+                xlabel=none,
+                ylabel=none]
+
+            \addplot[CCS] coordinates{
+                (25,0.198658)
+                (50,0.249623)
+                (100,0.319781)
+                (250,0.431699)
+                (500,0.509652)
+            };
+            \label{plot:parameter-optimization-iterations-ccs}
+        \end{axis}
+    \end{tikzpicture}
+\end{subfigure}

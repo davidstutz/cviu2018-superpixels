@@ -1,0 +1,19 @@
+\subsection{Runtime}
+\label{subsec:appendix-experiments-robustness}
+
+We briefly discuss runtime on the \SBD, \SUNRGBD and \Fash datasets allowing to get
+more insights on how the algorithms scale with respect to image size and the
+number of generated superpixels.
+
+We find that the runtime of most algorithms scales roughly linear in the input size, while the
+number of generated superpixels has little influence. We first remember that
+the average image size of the \SBD, \SUNRGBD and \Fash datasets is: $314 \times 242 = 75988$,
+$660 \times 488 = 322080$ and $400 \times 600 = 240000$. For $\K \approx 400$, \W
+runs in roughly $1.9\text{ms}$ and $7.9\text{ms}$ on the \SBD and \SUNRGBD datasets, respectively.
+As the input size for the \SUNRGBD dataset is roughly $4.24$ times larger compared to the
+\SBD dataset, this results in roughly linear scaling of runtime with respect to the input size.
+Similar reasoning can be applied to most of the remaining algorithms, especially
+fast algorithms such as \CW, \PF, \preSLIC, \MSS or \SLIC. Except for \RW, \QS and \SEAW
+we also notice that the number of generated superpixels does not influence runtime significantly.
+Overall, the results confirm the claim of many authors that algorithms scale
+linear in the input size, while the number of generated superpixels has little influence.

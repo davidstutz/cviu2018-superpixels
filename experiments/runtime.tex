@@ -1,0 +1,79 @@
+\subsection{Runtime}
+\label{subsec:experiments-runtime}
+
+Considering runtime, we report CPU time\footnote{\label{foot:runtime}
+    Runtimes have been taken on an Intel$^\text{\textregistered}$ Core\texttrademark\xspace i7-3770 @ $3.4GHz$, 64bit with 32GB RAM.
+} excluding connected components but including color space conversions if applicable.
+We made sure that no multi-threading or GPU computation were used. We begin by considering
+runtime in general, with a glimpse on realtime applications, before considering iterative algorithms.
+
+We find that some well performing algorithms can be run at (near) realtime. We
+consider Figure \ref{fig:experiments-runtime}
+showing runtime in seconds $t$ on the \BSDS (image size $481 \times 321$) and \NYU (image size $608 \times 448$) datasets.
+Concretely, considering the watershed-based algorithms \Wr and \CWr, we can report runtimes below $10\text{ms}$
+on both datasets, corresponding to roughly~$100\text{fps}$. Similarly, \PFr
+runs at below $10\text{ms}$. Furthermore, several algorithms, such as
+\SLICr, \ERGCr, \FHr, \PBr, \MSSr and \preSLICr provide runtimes below $80\text{ms}$
+and some of them are iterative, \ie reducing the number of iterations may further
+reduce runtime. However, using the convention that realtime corresponds to
+roughly $30\text{fps}$, this leaves \preSLIC and \MSS on the larger images
+of the \NYU dataset. However, even without explicit runtime requirements, we find runtimes
+below $1\text{s}$ per image to be beneficial for using superpixel algorithms as
+pre-processing tool, ruling out \TPS, \CIS, \SEAW, \RW and \NC.
+Overall, several superpixel algorithms provide runtimes appropriate for pre-processing tools;
+realtime applications are still limited to a few fast algorithms.
+
+\begin{figure}[t]
+    \centering
+    \input{plots/runtime-bsds500-nyuv2}
+    \caption{Runtime in seconds on the \BSDS and \NYU datasets.
+    Watershed-based, some clustering-based algorithms as well as \PF offer
+    runtimes below $100ms$. In the light of realtime applications, \CW, \W
+    and \PF even provide runtimes below $10ms$. However, independent of the
+    application at hand, we find runtimes below $1s$ beneficial for using
+    superpixel algorithms as pre-processing tools.
+    \textbf{Best viewed in color.}}
+    \label{fig:experiments-runtime}
+\end{figure}
+\begin{figure}[t]
+    \centering
+    \input{plots/runtime-iterations}
+    \caption{\Rec, \UE and runtime in seconds $t$ for iterative algorithms with 
+    $\K \approx 400$ on the \BSDS dataset.
+    Some algorithms allow to gradually trade performance for runtime, reducing runtime 
+    by several $100ms$ in some cases.
+    \textbf{Best viewed in color.}}
+    \label{fig:experiments-iterations}
+	\vskip 12px
+	\input{legends/full+depth+implementations-half}
+\end{figure}
+\FloatBarrier
+
+Iterative algorithms offer to reduce runtime while gradually lowering performance.
+Considering Figure \ref{fig:experiments-iterations},
+showing \Rec, \UE and runtime in seconds $t$ for all iterative algorithms on the \BSDS dataset,
+we observe that the number of iterations can safely be reduced to decrease
+runtime while lowering \Rec and increasing \UE only slightly. In the best case,
+for example considering \ETPSr, reducing the number of iterations from $25$ to $1$
+reduces the runtime from $680\text{ms}$ to $58\text{ms}$, while keeping \Rec und \UE
+nearly constant. For other cases, such as \SEEDSr\footnote{
+	We note that we use the original \SEEDS implementation instead of the
+	OpenCV \cite{Bradski:2000} implementation which is reported to be more efficient, see
+	\url{http://docs.opencv.org/3.0-last-rst/modules/ximgproc/doc/superpixels.html}.
+}, \Rec decreases abruptly when
+using less than $5$ iterations. Still, runtime can be reduced from $920\text{ms}$
+to $220\text{ms}$. For \CRSr and \CISr, runtime reduction is similarly significant,
+but both algorithms still exhibit higher runtimes. If post-processing
+is necessary, for example for \SLICr and \preSLICr, the number of iterations has
+to be fixed in advance. However, for other iterative algorithms, the number of
+iterations may be adapted at runtime depending on the available time.
+Overall, iterative algorithms are beneficial as they are able to gradually
+trade performance for runtime.
+
+We conclude that watershed-based as well as some path-based and clustering-based
+algorithms are candidates for realtime applications. Iterative algorithms,
+in particular many clustering-based and iterative energy optimization algorithms, may
+further be speeded up by reducing the number of iterations and trading performance for
+runtime. On a final note, we want to remind the reader that the image sizes of all
+used datasets may be relatively small compared to today's applications.
+However, the relative runtime comparison is still valuable.

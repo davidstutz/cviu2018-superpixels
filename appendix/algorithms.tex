@@ -1,0 +1,55 @@
+\section{Algorithms}
+\label{sec:appendix-algorithms}
+
+Complementing the information presented in Section \ref{sec:algorithms}, Table \ref{table:algorithms}
+gives a complete overview of all algorithms.
+
+\begin{table*}[t]
+    \centering
+    {\scriptsize
+        \begin{tabular}{r | c c c | c c | c c c c c c | c c c c | c c | c}
+            & \rot{Reference} & \rot{Year} & \rot{Citations} & \rot{Categorization} & \rot{Implementation} & \rot{GRAY} & \rot{RGB} & \rot{Lab} & \rot{Luv} & \rot{HSV} & \rot{YCrCb} & \rot{\#Parameters} & \rot{\#Superpixels} & \rot{\#Iterations} & \rot{Compactness} & \rot{Depth} & \rot{Edges} & \\\hline
+           \W & \cite{Meyer:1992} & 1992 & 234 & watershed & C/C++ & -- & \bcheckmark & \checkmark & \checkmark & \checkmark & \checkmark & 1 & \checkmark & -- & -- & -- & -- & \ref{plot:w}\\
+           \EAMS & \cite{ComaniciuMeer:2002} & 2002 & 9631 & density & MatLab/C & -- & \bcheckmark & -- & \checkmark & -- & -- & 2 & -- & -- & -- & -- & \checkmark & \ref{plot:eams}\\
+           \NC & \cite{RenMalik:2003} & 2003 & 996 & graph & MatLab/C & -- & \bcheckmark & -- & -- & -- & -- & 3 & \checkmark & -- & -- & -- & -- & \ref{plot:nc}\\
+           \FH & \cite{FelzenswalbHuttenlocher:2004} & 2004 & 4144 & graph & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 3 & -- & -- & -- & -- & -- & \ref{plot:fh}\\
+           \reFH & \multicolumn{3}{c|}{\dittostraight} & \multicolumn{1}{c}{\dittostraight} & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 3 & -- & -- & -- & -- & -- & \ref{plot:refh}\\
+           \RW & \cite{GradyFunkaLea:2004,Grady:2006} & 2004 & 189 + 1587 & graph & MatLab/C & -- & \bcheckmark & -- & -- & -- & -- & 2 & \checkmark & -- & -- & -- & -- & \ref{plot:rw}\\
+           \QS & \cite{VedaldiSoatto:2008} & 2008 & 376 & density & MatLab/C & -- & \checkmark & \bcheckmark & -- & -- & -- & 3 & -- & -- & -- & -- & -- & \ref{plot:qs}\\
+           \PF & \cite{DruckerMacCormick:2009} & 2009 & 18 & path & Java & -- & \bcheckmark & -- & -- & -- & -- & 2 & \checkmark & -- & -- & -- & -- & \ref{plot:pf}\\
+           \TP & \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009} & 2009 & 559 & contour evolution & MatLab/C & -- & \bcheckmark & -- & -- & -- & -- & 4 & \checkmark & -- & -- & -- & -- & \ref{plot:tp}\\
+           \CIS & \cite{VekslerBoykovMehrani:2010} & 2010 & 223 & graph & C/C++ & \bcheckmark & \checkmark & -- & -- & -- & -- & 4 & \checkmark & \checkmark & -- & -- & -- & \ref{plot:cis}\\
+           \SLIC & \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2010,AchantaShajiSmithLucchiFuaSuesstrunk:2012} & 2010 & 438 + 1843 & clustering & C/C++ & -- & \checkmark & \bcheckmark & -- & -- & -- & 4 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:slic}\\
+           \vlSLIC & \multicolumn{3}{c|}{\dittostraight} & \multicolumn{1}{c}{\dittostraight} & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 4 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:vlslic}\\
+           \CRS & \cite{MesterConradGuevara:2011,ConradMertzMester:2013} & 2011 & 14 + 4 & energy optimization & C/C++ & \checkmark & \checkmark & -- & -- & -- & \bcheckmark & 4 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:crs}\\
+           \ERS & \cite{LiuTuzelRamalingamChellappa:2011} & 2011 & 216 & graph & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 3 & \checkmark & -- & -- & -- & -- & \ref{plot:ers}\\
+           \PB & \cite{ZhangHartleyMashfordBurn:2011} & 2011 & 36 & graph & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 3 & \checkmark & -- & -- & -- & -- & \ref{plot:pb}\\
+           \DASP & \cite{WeikersdorferGossowBeetz:2012} & 2012 & 22 & clustering & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 5 & \checkmark & \checkmark & \checkmark & -- & \checkmark & \ref{plot:dasp}\\
+           \SEEDS & \cite{VanDenBerghBoixRoigCapitaniVanGool:2012} & 2012 & 98 & energy optimization & C/C++ & -- & \checkmark & \bcheckmark & -- & \checkmark & -- & 6 & \checkmark & \checkmark & -- & -- & -- & \ref{plot:seeds}\\
+           \reSEEDS & \multicolumn{3}{c|}{\dittostraight} & \multicolumn{1}{c}{\dittostraight} & C/C++ & -- & \bcheckmark & \checkmark &  -- & \checkmark & -- & 6 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:reseeds}\\
+           \TPS & \cite{DaiTangHuazhaFuXiaochunCao:2012,HuazhuFuXiaochunCaoDaiTangYahongHanDongXu:2014} & 2012 & 8 + 1 & path & MatLab/C & -- & \bcheckmark & -- & -- & -- & -- & 4 & \checkmark & -- & -- & -- & \checkmark & \ref{plot:tps}\\
+           \VC & \cite{WangWang:2012} & 2012 & 36 & clustering & C/C++ & -- & \checkmark & \bcheckmark & -- & -- & -- & 6 & \checkmark & -- & \checkmark & -- & -- & \ref{plot:vc}\\
+           \CCS & \cite{TasliCiglaGeversAlatan:2013,TasliCiglaAlatan:2015} & 2013 & 6 + 4 & energy optimization & C/C++ & -- & \checkmark & \bcheckmark & -- & -- & -- & 3 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:ccs}\\
+           \VCCS & \cite{PaponAbramovSchoelerWoergoetter:2013} & 2013 & 87 & clustering & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 4 & -- & -- & \checkmark & \checkmark & -- & \ref{plot:vccs}\\
+           \CW & \cite{NeubertProtzel:2014} & 2014 & 11 & watershed & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 2 & \checkmark & -- & \checkmark & -- & -- & \ref{plot:cw}\\
+           \ERGC & \cite{BuyssensGardinRuan:2014,BuyssensToutainElmoatazLezoray:2014} & 2014 & 2 + 1 & contour evolution & C/C++ & -- & \checkmark & \bcheckmark & -- & -- & -- & 3 & \checkmark & -- & \checkmark & -- & -- & \ref{plot:ergc}\\
+           %\LRW & \cite{ShenDuWangLi:2014} & 2014 & 18 & graph & MatLab/C & -- & \checkmark & \bcheckmark & -- & -- & -- & 5 & \checkmark & \checkmark & -- & -- & -- & \ref{plot:lrw}\\
+           \MSS & \cite{BenesovaKottman:2014} & 2014 & 4 & watershed & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 5 & \checkmark & -- & -- & -- & -- & \ref{plot:mss}\\
+           \preSLIC & \cite{NeubertProtzel:2014} & 2014 & 11 & clustering & C/C++ & -- & \checkmark & \bcheckmark & -- & -- & -- & 4 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:preslic}\\
+           \WP & \cite{MachairasDecenciereWalter:2014,MachairesFaesselCardenasPenaChabardesWalterDecenciere:2015} & 2014 & 5 + 8 & watershed & Python & -- & \bcheckmark & -- & -- & -- & -- & 2 & \checkmark & -- & \checkmark & -- & -- & \ref{plot:wp}\\
+           \ETPS & \cite{YaoBobenFidlerUrtasun:2015} & 2015 & 6 & energy optimization & C/C++ & -- & \bcheckmark & -- & -- & -- & -- & 5 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:etps}\\
+           \LSC & \cite{LiChen:2015} & 2015 & 2 & clustering & C/C++ & -- & \checkmark & \bcheckmark & -- & -- & -- & 4 & \checkmark & \checkmark & \checkmark & -- & -- & \ref{plot:lsc}\\
+           \POISE & \cite{HumayunLiRehg:2015} & 2015 & 3 & graph & MatLab/C & -- & \bcheckmark & -- & -- & -- & -- & 5 & \checkmark & -- & -- & -- & \checkmark & \ref{plot:poise}\\
+           \SEAW & \cite{StrassburgGrzeszickRothackerFink:2015} & 2015 & 0 & wavelet & MatLab/C & -- & \bcheckmark & -- & -- & -- & -- & 3 & -- & -- & -- & -- & -- & \ref{plot:seaw}
+        \end{tabular}
+    }
+    \caption{List of evaluated superpixel algorithms. First of all we present the
+    used acronym (in parts consistent with \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2012}
+    and \cite{NeubertProtzel:2012}), the corresponding publication, the year of
+    publication and the number of Google Scholar citations as of October 13, 2016.
+    We present a coarse categorization which is discussed in Section \ref{sec:algorithms}.
+    We additionally present implementation details such as the programming language,
+    supported color spaces and provided parameters. The color space used for evaluation is marked by a square.
+    \textbf{Best viewed in color.}}
+    \label{table:algorithms}
+\end{table*}
